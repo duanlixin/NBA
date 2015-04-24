@@ -1,0 +1,17 @@
+/* Reset */
+html, body, ul, li, p, h1, h2, h3, h4, h5, h6, form, img { margin:0; padding:0; }
+img { border:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; }
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+body { background:#fff; color:#000; font:12px/20px 'Arial', 'Microsoft YaHei', '微软雅黑', 'SimSun', '宋体';}
+iframe { border:none;}
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { zoom:1; }
+a, a:link { color:#14171a; text-decoration:none; }
+a:visited { color:#6f6f6f; }
+a:hover{ color: #2587d4; text-decoration:underline;}
+a:active, a:focus { text-decoration:none; }
+.simsun{ font-family:'Arial', 'SimSun', '宋体';}
+/* Reset End */

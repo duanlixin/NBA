@@ -1,0 +1,20 @@
+/* main-content */
+.main-content {
+    height: 600px;
+    background: url(http://i3.sinaimg.cn/ty/2011hqj/quanyun/repeatX.png) repeat-x 0px -260px;
+}
+
+
+.chief {
+    border: 2px solid green;
+    float: left;
+    display: inline;
+    width: 580px;
+}
+.extra {
+    border: 2px solid orange;
+    float: right;
+    display: inline;
+    width: 390px;
+}
+/* main-content End */

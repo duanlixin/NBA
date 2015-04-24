@@ -1,0 +1,96 @@
+body {
+}
+/* header */
+.header {
+    height: 196px;
+    width: 100%;
+    background: #1a477b;
+/*    background-image: -webkit-image-set(url(../../common/img/sprite_common_icon.png) 1x,url(http://i3.sinaimg.cn/ty/2011hqj/quanyun/repeatX.png@2x.png) 2x);*/
+}
+
+.wrap {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.header .wrap .logo {
+    height: 136px;
+}
+.header .wrap .logo .logo-img {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    height: 102px;
+    width: 46px;
+}
+.header .wrap .logo .logo-img a {
+    display: block;
+    height: 100%;
+    background-image: url(http://i0.sinaimg.cn/ty/nbachina/2013/0826_lqf_chinanba_imageLogo.png);
+    _background-image: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src=http://i0.sinaimg.cn/ty/nbachina/2013/0826_lqf_chinanba_imageLogo.png);
+    text-indent: -9999em;
+}
+.header .wrap .logo .logo-site {
+    width: 225px;
+    height: 26px;
+}
+.header .wrap .logo .logo-site a {
+    display: block;
+    height: 100%;
+    background: url("http://i3.sinaimg.cn/ty/nbachina/2013/0826_lqf_chinanba_textLogo.gif") no-repeat;
+    text-indent: -9999em;
+}
+.header .wrap .logo .logo-txt-wrap {
+    position: absolute;
+    top: 40px;
+    left: 66px;
+    height: 102px;
+    width: 46px;
+}
+.header .wrap .logo .logo-txt-wrap .logo-link {
+    margin-top: 15px;
+    width: 300px;
+    height: 20px;
+}
+.top-nav {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    color: #fff;
+}
+.top-nav a {
+    color: #fff;
+}
+
+.dropdown-list-btn {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 110px;
+    height: 31px;
+    background-color: green;
+    clear: both;
+    background: #ffffff url(http://i0.sinaimg.cn/ty/deco/2014/0829/110x31.png) no-repeat;
+    box-shadow: 0px 1px 1px #000000;
+}
+
+.nav {
+    background: #1e518c;
+    height: 60px;
+    line-height: 60px;
+}
+
+.nav ul li {
+    width: 75px;
+    float: left;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+.nav ul li a {
+    color: #fff;
+}
+/* header End */
+

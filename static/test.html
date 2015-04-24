@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>NBA官网</title>
+<link rel="stylesheet" href="styles/index.css" />
+<script type="text/javascript" src="scripts/jquery-1.11.2.min.js"></script>
+
+<script type="text/javascript">
+      var page_num = 2;
+      $(document).ready(function(){
+        $(window).scroll(function(){
+          console.log($(document).scrollTop(),$(document).height(),$(window).height())
+          if($(document).scrollTop()>=$(document).height()-$(window).height()){
+            var div1tem = $('#container').height()
+            var str =''
+            // $.ajax({
+            //     type:"GET",
+            //     url:'ajaxdata.php',
+            //     dataType:'json',
+            //     beforeSend:function(){
+            //       $('.ajax_loading').show() //显示加载时候的提示
+            //     },
+            //     success:function(ret){
+            //      $(".after_div").before(ret) //将ajxa请求的数据追加到内容里面
+            //      $('.ajax_loading').hide() //请求成功,隐藏加载提示
+            //     }
+            // })
+          }
+        })
+      })
+</script>
+</head>
+<body>
+     <div>
+        <div style='width:100%;height:1200px'>内容</div>
+        <div class='after_div'></div>
+<div class='ajax_loading' style='background:#F0F0F0;height:60px;width:100%;text-align:center;line-height:60px;font-size:18px;display:none;position:fixed;bottom:0px'><img src="img/loadinfo.net.gif"> 数据加载中</div>
+     </div>
+    </body>
+</html>
