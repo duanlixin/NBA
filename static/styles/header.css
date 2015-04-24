@@ -1,4 +1,5 @@
 body {
+
 }
 /* header */
 .header {
@@ -21,26 +22,28 @@ body {
     position: absolute;
     top: 30px;
     left: 0;
-    height: 102px;
-    width: 46px;
+    height: 90px;
+    width: 41px;
 }
 .header .wrap .logo .logo-img a {
     display: block;
     height: 100%;
-    background-image: url(http://i0.sinaimg.cn/ty/nbachina/2013/0826_lqf_chinanba_imageLogo.png);
+    background: url(./images/logo_nba.png) no-repeat;
     _background-image: none;
-    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src=http://i0.sinaimg.cn/ty/nbachina/2013/0826_lqf_chinanba_imageLogo.png);
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src=./images/logo_nba.png);
     text-indent: -9999em;
 }
 .header .wrap .logo .logo-site {
-    width: 225px;
-    height: 26px;
+    width: 309px;
+    height: 38px;
 }
 .header .wrap .logo .logo-site a {
     display: block;
     height: 100%;
-    background: url("http://i3.sinaimg.cn/ty/nbachina/2013/0826_lqf_chinanba_textLogo.gif") no-repeat;
-    text-indent: -9999em;
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
 }
 .header .wrap .logo .logo-txt-wrap {
     position: absolute;
@@ -54,26 +57,52 @@ body {
     width: 300px;
     height: 20px;
 }
+.header .wrap .logo .logo-txt-wrap .logo-link a {
+    font-size: 18px;
+    color: #bdc3cd;
+}
+.header .wrap .logo .logo-txt-wrap .logo-link a.english-site {
+    margin-left: 20px;
+}
+
 .top-nav {
     position: absolute;
     top: 10px;
     right: 5px;
-    color: #fff;
-}
-.top-nav a {
+    font-size: 12px;
+    font-family: '宋体', 'Microsoft YaHei', 'Arial', '微软雅黑', 'SimSun';
     color: #fff;
 }
 
+.top-nav a {
+    color: #fff;
+    display: inline-block;
+    height: 21px;
+    text-indent: 37px;
+    background: url(./images/logo_bbs.png) no-repeat;
+}
+.top-nav span {
+    color: #bdc3cd;
+}
 .dropdown-list-btn {
     position: absolute;
     top: 68px;
     right: 0;
-    width: 110px;
-    height: 31px;
+    width: 140px;
+    height: 33px;
     background-color: green;
     clear: both;
-    background: #ffffff url(http://i0.sinaimg.cn/ty/deco/2014/0829/110x31.png) no-repeat;
+    background: #ffffff url(./images/logo_shop.png) 4px no-repeat;
     box-shadow: 0px 1px 1px #000000;
+}
+
+.dropdown-list-btn .dropdown-arrow {
+    position: absolute;
+    width: 16px;
+    height: 10px;
+    top: 12px;
+    right: 2px;
+    background: #ffffff url(./images/triangle_down.png) no-repeat;
 }
 
 .nav {
@@ -89,7 +118,12 @@ body {
     text-align: center;
     color: #fff;
 }
+.nav ul li.cur {
+    background: #2a6cb6;
+}
 .nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
     color: #fff;
 }
 /* header End */

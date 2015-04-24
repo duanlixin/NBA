@@ -1,7 +1,8 @@
 /* main-content */
 .main-content {
-    height: 600px;
-    background: url(http://i3.sinaimg.cn/ty/2011hqj/quanyun/repeatX.png) repeat-x 0px -260px;
+    height: 1600px;
+    width: 100%;
+    background: url(./images/bg.jpg) center top no-repeat;
 }
 
 
