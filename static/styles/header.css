@@ -6,24 +6,26 @@ body {
     height: 196px;
     width: 100%;
     background: #1a477b;
-/*    background-image: -webkit-image-set(url(../../common/img/sprite_common_icon.png) 1x,url(http://i3.sinaimg.cn/ty/2011hqj/quanyun/repeatX.png@2x.png) 2x);*/
 }
 
-.wrap {
+.header-main {
     position: relative;
+}
+.wrap {
     width: 1000px;
     margin: 0 auto;
 }
 
 .header .wrap .logo {
+    width: 400px;
     height: 136px;
 }
 .header .wrap .logo .logo-img {
+    width: 41px;
+    height: 90px;
     position: absolute;
     top: 30px;
     left: 0;
-    height: 90px;
-    width: 41px;
 }
 .header .wrap .logo .logo-img a {
     display: block;
@@ -46,11 +48,10 @@ body {
     text-decoration: none;
 }
 .header .wrap .logo .logo-txt-wrap {
-    position: absolute;
-    top: 40px;
-    left: 66px;
-    height: 102px;
+    height: 100px;
     width: 46px;
+    padding-top: 36px;
+    padding-left: 60px;
 }
 .header .wrap .logo .logo-txt-wrap .logo-link {
     margin-top: 15px;
