@@ -97,6 +97,25 @@ body {
     box-shadow: 0px 1px 1px #000000;
 }
 
+.dropdown-list-btn ul {
+    display: none;
+    position: absolute;
+    top: 33px;
+}
+
+.dropdown-list-btn ul li{
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #3473b9;
+    opacity: 0.9;
+    border-bottom: 1px solid #2560a2;
+}
+.dropdown-list-btn ul li a {
+    color: #fff;
+    font-size: 18px;
+}
 .dropdown-list-btn .dropdown-arrow {
     position: absolute;
     width: 16px;
@@ -104,6 +123,9 @@ body {
     top: 12px;
     right: 2px;
     background: #ffffff url(./images/triangle_down.png) no-repeat;
+}
+.dropdown-list-btn .dropup-arrow {
+    background: #ffffff url(./images/triangle_up.png) no-repeat;
 }
 
 .nav {
@@ -124,6 +146,27 @@ body {
 }
 .nav ul li a {
     text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+}
+
+.nav ul li .second-wrap {
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    background: #3473b9;
+    opacity: 0.9;
+}
+.nav ul li.cur .second-wrap {
+    display: block;
+}
+.nav ul li .second-wrap .senond-item {
+    border-bottom: 1px solid #2560a2;
+}
+.nav ul li .second-wrap .hover {
+    background: #1d5ba3;
+}
+.nav ul li .second-wrap .senond-item a {
     font-size: 18px;
     color: #fff;
 }

@@ -6,6 +6,7 @@
 <meta name="description" content="" />
 <title>NBA官网</title>
 <link rel="stylesheet" href="styles/index.css" />
+<script type="text/javascript" src="scripts/jquery-1.11.2.min.js"></script>
 </head>
 <body>
 <div class="header">
@@ -31,23 +32,119 @@
         </div>
 
         <div class="dropdown-list-btn">
-            <span class="dropdown-arrow"></span>
+            <span id="drop-arrow" class="dropdown-arrow"></span>
+            <ul>
+                <li><a href="#">球衣</a></li>
+                <li><a href="#">服饰</a></li>
+                <li><a href="#">球鞋</a></li>
+                <li><a href="#">帽子</a></li>
+                <li><a href="#">篮球</a></li>
+                <li><a href="#">配件</a></li>
+            </ul>
         </div>
     </div>
     <div class="nav">
         <div class="wrap">
-            <ul class="clearfix">
-                <li class="cur"><a href="#" target="_blank">赛程</a></li>
-                <li><a href="#" target="_blank">视频</a></li>
-                <li><a href="#" target="_blank">球队</a></li>
-                <li><a href="#" target="_blank">球员</a></li>
-                <li><a href="#" target="_blank">比分</a></li>
-                <li><a href="#" target="_blank">新闻</a></li>
-                <li class="cur"><a href="#" target="_blank">社区</a></li>
-                <li><a href="#" target="_blank">游戏</a></li>
-                <li><a href="#" target="_blank">排名</a></li>
-                <li><a href="#" target="_blank">统计</a></li>
-                <li><a href="#" target="_blank">图片</a></li>
+            <ul class="nav-menu clearfix">
+                <li>
+                    <a href="#" target="_blank">赛程</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">视频</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">球队</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">球员</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">比分</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">新闻</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">社区</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">游戏</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">排名</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">统计</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" target="_blank">图片</a>
+                    <div class="second-wrap">
+                        <div class="senond-item"><a href="#">球衣球衣球衣球衣球衣球衣球衣球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                        <div class="senond-item"><a href="#">球衣</a></div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -137,5 +234,38 @@
         <p>有任何的建议和意见，都欢迎联络我们：<a href="mailto:NBAChinaInfo@nba.com">NBAChinaInfo@nba.com</a></p>
     </div>
 </div>
+<script type="text/javascript">
+(function(){
+    var dropdown = $('.dropdown-list-btn');
+
+    dropdown.on('click', function() {
+        var self = $(this);
+        self.find('ul').slideToggle('slow');
+
+        $('#drop-arrow').toggleClass('dropup-arrow');
+
+    });
+
+    $('.nav-menu li').hover(
+        function () {
+            $(this).addClass('cur');
+        },
+        function () {
+            $(this).removeClass('cur');
+        }
+    );
+
+    $('.senond-item').hover(
+        function () {
+            $(this).addClass('hover');
+        },
+        function () {
+            $(this).removeClass('hover');
+        }
+    );
+
+})();
+
+</script>
 </body>
 </html>
