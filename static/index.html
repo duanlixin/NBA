@@ -150,7 +150,7 @@
     </div>
 </div>
 <div class="main-content">
-    <div class="wrap clearfix" style="height: 600px;">
+    <div class="wrap clearfix">
         <div class="chief">xx</div>
         <div class="extra">yy</div>
 
@@ -234,38 +234,6 @@
         <p>有任何的建议和意见，都欢迎联络我们：<a href="mailto:NBAChinaInfo@nba.com">NBAChinaInfo@nba.com</a></p>
     </div>
 </div>
-<script type="text/javascript">
-(function(){
-    var dropdown = $('.dropdown-list-btn');
-
-    dropdown.on('click', function() {
-        var self = $(this);
-        self.find('ul').slideToggle('slow');
-
-        $('#drop-arrow').toggleClass('dropup-arrow');
-
-    });
-
-    $('.nav-menu li').hover(
-        function () {
-            $(this).addClass('cur');
-        },
-        function () {
-            $(this).removeClass('cur');
-        }
-    );
-
-    $('.senond-item').hover(
-        function () {
-            $(this).addClass('hover');
-        },
-        function () {
-            $(this).removeClass('hover');
-        }
-    );
-
-})();
-
-</script>
+<script type="text/javascript" src="scripts/header.js"></script>
 </body>
 </html>

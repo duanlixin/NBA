@@ -30,9 +30,8 @@ body {
 .header .wrap .logo .logo-img a {
     display: block;
     height: 100%;
+    width: 100%;
     background: url(./images/logo_nba.png) no-repeat;
-    _background-image: none;
-    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src=./images/logo_nba.png);
     text-indent: -9999em;
 }
 .header .wrap .logo .logo-site {
@@ -41,16 +40,15 @@ body {
 }
 .header .wrap .logo .logo-site a {
     display: block;
-    height: 100%;
+    /*height: 100%;*/
     font-size: 36px;
     color: #fff;
     font-weight: bold;
-    text-decoration: none;
 }
 .header .wrap .logo .logo-txt-wrap {
     height: 100px;
     width: 46px;
-    padding-top: 36px;
+    padding-top: 22px;
     padding-left: 60px;
 }
 .header .wrap .logo .logo-txt-wrap .logo-link {
@@ -65,7 +63,9 @@ body {
 .header .wrap .logo .logo-txt-wrap .logo-link a.english-site {
     margin-left: 20px;
 }
-
+.header .wrap .logo .logo-txt-wrap .logo-link a:hover {
+    text-decoration: underline;
+}
 .top-nav {
     position: absolute;
     top: 10px;
@@ -74,7 +74,10 @@ body {
     font-family: '宋体', 'Microsoft YaHei', 'Arial', '微软雅黑', 'SimSun';
     color: #fff;
 }
-
+.top-nav a,
+.top-nav span {
+    vertical-align: middle;
+}
 .top-nav a {
     color: #fff;
     display: inline-block;
@@ -103,7 +106,7 @@ body {
     top: 33px;
 }
 
-.dropdown-list-btn ul li{
+.dropdown-list-btn ul li {
     width: 140px;
     height: 40px;
     line-height: 40px;
@@ -111,6 +114,9 @@ body {
     background: #3473b9;
     opacity: 0.9;
     border-bottom: 1px solid #2560a2;
+}
+.dropdown-list-btn ul li.store-hover {
+    background: #1d5ba3;
 }
 .dropdown-list-btn ul li a {
     color: #fff;
@@ -145,7 +151,6 @@ body {
     background: #2a6cb6;
 }
 .nav ul li a {
-    text-decoration: none;
     font-size: 18px;
     color: #fff;
 }
@@ -153,6 +158,8 @@ body {
 .nav ul li .second-wrap {
     display: none;
     position: absolute;
+    top: 56px;
+    left: 0;
     white-space: nowrap;
     background: #3473b9;
     opacity: 0.9;
@@ -163,7 +170,7 @@ body {
 .nav ul li .second-wrap .senond-item {
     border-bottom: 1px solid #2560a2;
 }
-.nav ul li .second-wrap .hover {
+.nav ul li .second-wrap .nav-hover {
     background: #1d5ba3;
 }
 .nav ul li .second-wrap .senond-item a {
