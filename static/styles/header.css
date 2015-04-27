@@ -111,8 +111,7 @@ body {
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: #3473b9;
-    opacity: 0.9;
+    background: #2a6cb6;
     border-bottom: 1px solid #2560a2;
 }
 .dropdown-list-btn ul li.store-hover {
@@ -136,8 +135,6 @@ body {
 
 .nav {
     background: #1e518c;
-    height: 60px;
-    line-height: 60px;
 }
 
 .nav ul li {
@@ -151,6 +148,9 @@ body {
     background: #2a6cb6;
 }
 .nav ul li a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
     font-size: 18px;
     color: #fff;
 }
@@ -161,8 +161,7 @@ body {
     top: 56px;
     left: 0;
     white-space: nowrap;
-    background: #3473b9;
-    opacity: 0.9;
+    background: #2a6cb6;
 }
 .nav ul li.cur .second-wrap {
     display: block;
@@ -177,5 +176,32 @@ body {
     font-size: 18px;
     color: #fff;
 }
+
+.team-list {
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.team-list tr {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+.team-list th {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: left;
+}
+.team-list td {
+    text-align: left;
+    padding: 0 20px;
+}
+.nav ul li .team-list td a {
+    font-size: 14px;
+}
+
 /* header End */
 

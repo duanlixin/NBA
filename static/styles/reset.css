@@ -8,6 +8,10 @@ select, input, textarea { font-size:12px; margin:0; }
 body { background:#fff; color:#000; font:12px/1.5 'Microsoft YaHei', 'Arial', '微软雅黑', 'SimSun', '宋体';}
 iframe { border:none;}
 a { text-decoration: none;}
+a, a:link { color:#14171a; text-decoration:none; }
+a:visited { color:#6f6f6f; }
+a:hover{ color: #2587d4; text-decoration:underline;}
+a:active, a:focus { text-decoration:none; }
 .clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
 .clearfix { zoom:1; }
 .simsun{ font-family:'Arial', 'SimSun', '宋体';}

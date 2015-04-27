@@ -1,9 +1,10 @@
-(function(){
+(function() {
+
     var dropdown = $('.dropdown-list-btn');
 
     dropdown.on('click', function() {
         var self = $(this);
-        self.find('ul').slideToggle('slow');
+        self.find('ul').slideToggle('fast');
 
         $('#drop-arrow').toggleClass('dropup-arrow');
 
