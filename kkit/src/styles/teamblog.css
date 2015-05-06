@@ -1,0 +1,65 @@
+.author-layout {
+    width: 380px;
+    height: auto;
+}
+
+.author-layout h2 {
+    height: 39px;
+    line-height: 39px;
+    background: #1e518c;
+    border-bottom: 1px solid #be9d53;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 0 12px;
+}
+
+.author-layout h2 a {
+    color: #fff;
+}
+
+#author .author {
+    height: 90px;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    padding: 20px 20px 20px 10px;
+    border: 1px solid #e8e8e8;
+}
+
+#author .author-con {
+    height: 90px;
+    overflow: hidden;
+}
+
+#author .author-con dt {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+#author .author-con dt img {
+    width: 90px;
+    height: 90px;
+}
+
+#author .author-con dd {
+    width: 240px;
+}
+
+#author .author-con dd h4 {
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    font-weight: normal;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+#author .author-con dd p.gary {
+    color: #7a7a7a;
+}
+
+#author .author-con dd p span.blue {
+    color: #38a7e5;
+}

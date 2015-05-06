@@ -1,0 +1,93 @@
+        .hot-layout {
+            width: 380px;
+            height: auto;
+            background: #fff;
+        }
+
+        .hot-layout h2 {
+            height: 39px;
+            line-height: 39px;
+            background: #1e518c;
+            border-bottom: 1px solid #be9d53;
+            font-size: 18px;
+            font-weight: normal;
+            padding: 0 12px;
+        }
+
+        .hot-layout h2 a {
+            color: #fff;
+        }
+
+        .hot-layout h2.hot-hd a {
+            display: inline-block;
+            width: 104px;
+            height: 39px;
+            background: url("images/hot-icon.png") no-repeat right top;
+        }
+
+        #hot .hot {
+            box-shadow: 1px 2px 6px #e7e7e7;
+            -moz-box-shadow: 1px 2px 6px #e7e7e7;
+            -ms-box-shadow: 1px 2px 6px #e7e7e7;
+            -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+            padding: 10px 0;
+            border: 1px solid #e8e8e8;
+        }
+
+        #hot .hot-con {
+            height: 60px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f2f2f2;
+            overflow: hidden;
+        }
+
+        #hot .hot-list li {
+            display: inline;
+        }
+
+        #hot .hot-list li a.hot-a {
+            display: block;
+            padding: 0 10px 0 11px;
+            cursor: pointer;
+        }
+
+        #hot .hot-list a.hot-a:hover {
+            padding: 0 10px;
+            background: #edf1f4;
+            border-left: 1px solid #1377c3;
+        }
+
+        #hot .hot-list .nobg {
+            border-bottom: none;
+        }
+
+        #hot .hot-con dt {
+            width: 80px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        #hot .hot-con dt img {
+            width: 80px;
+            height: 60px;
+        }
+
+        #hot .hot-con dd {
+            width: 262px;
+            font-size: 16px;
+            height: 48px;
+            line-height: 24px;
+        }
+
+        #hot .hot-list span.dot {
+            width: 346px;
+            height: 24px;
+            line-height: 24px;
+            background: url("images/dot.png") no-repeat left 9px;
+            padding-left: 12px;
+            overflow: hidden;
+        }
+
+        #hot .hot-a {
+            display: block;
+        }

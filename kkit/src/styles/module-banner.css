@@ -1,0 +1,165 @@
+.scrollImg {
+    position: relative;
+    width: 600px;
+    height: 330px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.scrollImg a {
+    outline: hidden;
+    text-decoration: none;
+}
+
+.scrollImg .playerWrapper {
+    position: absolute;
+    width: 100%;
+    height: 330px;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: -1;
+}
+
+.scrollImg .btn-close {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    background: url("./images/close01.png") no-repeat;
+    z-index: 4;
+}
+
+.scrollImg .btn-close:hover {
+    background: url("./images/close02.png") no-repeat;
+}
+
+.scrollImg-mask {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.89;
+    filter: Alpha(opacity=89);
+    z-index: 1;
+    /* ? 有点疑问 */
+}
+
+.scrollImg-prev {
+    display: none;
+    position: absolute;
+    width: 33px;
+    height: 50px;
+    left: 0;
+    top: 110px;
+    background: url('./images/btn_banner_p.png') no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='./images/btn_banner_p.png');
+    _background: none;
+    z-index: 2;
+}
+
+.scrollImg-prev:hover {
+    background: url('./images/btn_banner_phover.png') no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='./images/btn_banner_phover.png');
+}
+
+.scrollImg-next {
+    display: none;
+    position: absolute;
+    width: 33px;
+    height: 50px;
+    top: 110px;
+    right: 0;
+    background: url('./images/btn_banner_n.png') no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='./images/btn_banner_n.png');
+    _background: none;
+    z-index: 2;
+}
+
+.scrollImg-next:hover {
+    background: url('./images/btn_banner_nhover.png') no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='./images/btn_banner_nhover.png');
+}
+
+.scrollImg-nav {
+    position: absolute;
+    right: 10px;
+    bottom: 19px;
+    _bottom: 9px;
+    list-style-type: none;
+    z-index: 2;
+}
+
+.scrollImg-nav li {
+    float: left;
+    margin-right: 10px;
+}
+
+.scrollImg-nav a {
+    display: inline-block;
+    *display: block;
+    width: 8px;
+    height: 8px;
+    background: url('./images/banner_circle_w.png') no-repeat;
+}
+
+.scrollImg-nav a.current {
+    background: url('./images/banner_circle_b.png') no-repeat;
+}
+
+.scrollImg-content {
+    position: absolute;
+    width: 3000px;
+    list-style-type: none;
+}
+
+.scrollImg-content li {
+    float: left;
+    position: relative;
+    height: 330px;
+}
+
+.scrollImg-content img {
+    width: 600px;
+    height: 330px;
+    border: none;
+}
+
+.scrollImg-content h3 {
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    left: 20px;
+    font-family: "Microsoft YaHei", 微软雅黑, Tahoma, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 50px;
+    z-index: 2;
+}
+
+.scrollImg-content h3 {
+    font-size: 20px;
+    color: #FFF;
+}
+
+.scrollImg-content .btn-play {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 70px;
+    left: 20px;
+    background: url('./images/btn_banner_play.png') no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='./images/btn_banner_play.png');
+    _background: none;
+    z-index: 2;
+}
+
+.scrollImg-content .btn-play:hover {
+    background: url('./images/btn_banner_play_h.png') no-repeat;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../images/btn_banner_play_h.png');
+    _background: none;
+}

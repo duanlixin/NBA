@@ -1,0 +1,92 @@
+.sched .scroll-inner span {
+    padding-left: 5px;
+    _padding-left: 10px;
+    line-height: 35px;
+    color: #2a6cb6;
+}
+
+.sched .daily {
+    float: left;
+    height: 150px;
+    _margin-left: -3px;
+}
+
+.sched .today {
+    margin-left: -5px;
+}
+
+.sched ul {
+    list-style-type: none;
+}
+
+.sched li {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-top: solid 3px #7a7a7a;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.sched li.ing {
+    border-top-color: #a90b33;
+}
+
+.sched li.ed {
+    border-top-color: #1e518c;
+}
+
+.sched table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+.sched tr {
+    width: 50px;
+    height: 20px;
+    padding: 0;
+}
+
+.sched td {
+    padding: 0 3px;
+    text-align: left;
+}
+
+.sched td.score {
+    text-align: right;
+}
+
+.sched td.video {
+    color: #2a6cb6;
+}
+
+.sched .combine {
+    text-align: center;
+}
+
+.sched .nav {
+    margin-top: 10px;
+}
+
+.sched .nav a {
+    text-decoration: none;
+    color: #2a6cb6;
+}
+
+.sched .nav a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.sched .nav li {
+    float: none;
+    height: 25px;
+    margin: 0 auto;
+    border: none;
+    text-align: center;
+    line-height: 25px;;
+}

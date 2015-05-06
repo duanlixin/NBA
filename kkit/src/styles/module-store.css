@@ -1,0 +1,71 @@
+#NBA-store {
+    width: 380px;
+    height: 372px;
+}
+
+.NBA-module-title {
+    height: 39px;
+    background: #1e518c;
+    border-bottom: 1px solid #be9d53;
+}
+
+.NBA-module-title h2 {
+    font-weight: normal;
+    padding-left: 10px;
+    line-height: 39px;
+    height: 39px;
+}
+
+.NBA-module-title h2 a {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.store-content {
+    height: 330px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    background: #ffffff;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+}
+
+.store-content ul {
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+.store-content ul li {
+    float: left;
+    display: inline;
+    width: 160px;
+    margin: 19px 18px 0 0;
+}
+
+.store-content ul li img {
+    border: 1px solid #e5e5e5;
+    width: 158px;
+    height: 178px;
+}
+
+.store-content ul li span {
+    font-size: 18px;
+    color: #ff2a2a;
+}
+
+.store-content ul li p {
+    font-size: 14px;
+    color: #454545;
+}
+
+.store-content p.store-group {
+    text-align: right;
+    font-size: 16px;
+    margin-right: 7px;
+}
+
+.store-content p.store-group a {
+    color: #7a7a7a;
+}

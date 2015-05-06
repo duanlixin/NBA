@@ -1,0 +1,136 @@
+/* -------- mod ------- */
+#mod-video {
+    width: 380px;
+    height: 441px;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+}
+
+#mod-video .title {
+    padding-left: 10px;
+    width: 370px;
+    height: 40px;
+    line-height: 40px;
+    color: #FFFFFF;
+    font-size: 18px;
+    background: #1E518C;
+}
+
+#mod-video .title a {
+    color: #FFFFFF;
+}
+
+#mod-video .tab {
+    width: 378px;
+    height: 38px;
+    border: 1px solid #7A7A7A;
+    border-top: 1px solid #BE9D53;
+    background: #57595B;
+}
+
+#mod-video .tab li {
+    width: 125px;
+    height: 38px;
+    line-height: 38px;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+    border-right: 1px solid #7A7A7A;
+    cursor: pointer;
+    float: left;
+}
+
+#mod-video .tab li.cur {
+    background: #454545;
+}
+
+#mod-video .tab li.nb {
+    width: 126px;
+    border-right: 0px;
+}
+
+#mod-video .wrap {
+    width: 378px;
+    height: 315px;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+}
+
+#mod-video .wrap .mod {
+    width: 378px;
+    height: 315px;
+}
+
+#mod-video .wrap .n {
+    display: none;
+}
+
+#mod-video .wrap .mod a {
+    position: relative;
+    margin: 20px 0px 0px 20px;
+    width: 160px;
+    height: 85px;
+    text-decoration: none;
+    float: left;
+}
+
+#mod-video .wrap .mod a img {
+    width: 160px;
+    height: 85px;
+}
+
+#mod-video .wrap .mod a span {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 160px;
+    height: 25px;
+}
+
+#mod-video .wrap .mod a span.bg {
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    background: #000000;
+}
+
+#mod-video .wrap .mod a span.text {
+    padding-left: 35px;
+    width: 125px;
+    line-height: 25px;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-shadow: 0px 2px 2px #000000;
+    background: url(images/video_ico.png) no-repeat 4px 6px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#mod-video .wrap .mod a:hover span.bg {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    background: #2A6CB6;
+}
+
+#mod-video .btn {
+    width: 378px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+#mod-video .btn a {
+    margin-right: 7px;
+    color: #7A7A7A;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#mod-video .btn a:hover {
+    color: #2A6CB6;
+}

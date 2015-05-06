@@ -1,0 +1,108 @@
+/* Reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+ul,
+li,
+ol,
+dt,
+dd,
+table,
+th,
+tr,
+td,
+p,
+select,
+input,
+img {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+select,
+input {
+    vertical-align: middle;
+}
+
+select,
+input,
+textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font: 12px/1.5 'Microsoft YaHei', 'Arial', '微软雅黑', 'SimSun', '宋体';
+}
+
+iframe {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+a:link {
+    color: #14171a;
+    text-decoration: none;
+    outline: none;
+}
+
+a:visited {
+    /*color:#6f6f6f;*/
+    outline: none;
+}
+
+a:hover {
+    color: #2587d4;
+    outline: none;
+    text-decoration: none;
+}
+
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.ch {
+    clear: both;
+}
+
+/* Reset End */

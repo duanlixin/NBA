@@ -1,0 +1,367 @@
+/* header */
+.header {
+    height: 196px;
+    width: 100%;
+    background: #1a477b;
+}
+
+.header-main {
+    position: relative;
+    height: 136px;
+    z-index: 30;
+}
+
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.header .wrap .logo {
+    width: 400px;
+    height: 136px;
+}
+
+.header .wrap .logo .logo-img {
+    width: 41px;
+    height: 90px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.header .wrap .logo .logo-img a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: url(./images/logo_nba.png) no-repeat;
+    text-indent: -9999em;
+}
+
+.header .wrap .logo .logo-site {
+    width: 320px;
+    height: 50px;
+}
+
+.header .wrap .logo .logo-site a {
+    display: block;
+    text-decoration: none;
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header .wrap .logo .logo-txt-wrap {
+    padding-top: 22px;
+    padding-left: 60px;
+}
+
+.header .wrap .logo .logo-txt-wrap .logo-link {
+    margin-top: 5px;
+    width: 300px;
+    height: 20px;
+}
+
+.header .wrap .logo .logo-txt-wrap .logo-link a {
+    font-size: 18px;
+    color: #bdc3cd;
+}
+
+.header .wrap .logo .logo-txt-wrap .logo-link a.english-site {
+    margin-left: 20px;
+    background: url(./images/split-line.png) 6px 3px no-repeat;
+    padding-left: 20px;
+}
+
+.header .wrap .logo .logo-txt-wrap .logo-link a:hover {
+    text-decoration: underline;
+}
+
+/* 顶部链接开始 */
+.top-nav {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 12px;
+    font-family: '宋体', 'Microsoft YaHei', 'Arial', '微软雅黑', 'SimSun';
+    color: #fff;
+}
+
+.top-nav a,
+.top-nav span {
+    vertical-align: middle;
+}
+
+.top-nav a {
+    color: #fff;
+    display: inline-block;
+    height: 21px;
+    text-indent: 37px;
+    background: url(./images/logo_bbs.png) no-repeat;
+}
+
+.top-nav a:hover {
+    color: #fff;
+}
+
+.top-nav span {
+    color: #bdc3cd;
+}
+
+/* 顶部链接结束 */
+
+/* NBA商店开始 */
+.dropdown-list-btn {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 140px;
+    height: 33px;
+    background-color: green;
+    clear: both;
+    background: #ffffff url(./images/logo_shop.png) 4px no-repeat;
+    box-shadow: 0px 1px 1px #000000;
+}
+
+.dropdown-list-btn ul {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 33px;
+}
+
+.dropdown-list-btn ul li {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #2a6cb6;
+    border-bottom: 1px solid #2560a2;
+}
+
+.dropdown-list-btn ul li.store-hover {
+    background: #1d5ba3;
+}
+
+.dropdown-list-btn ul li a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.dropdown-list-btn ul li.store-hover a {
+    color: #fff;
+}
+
+.dropdown-list-btn .dropdown-arrow {
+    position: absolute;
+    width: 16px;
+    height: 10px;
+    top: 12px;
+    right: 2px;
+    background: #ffffff url(./images/triangle_down.png) no-repeat;
+}
+
+.dropdown-list-btn .dropup-arrow {
+    background: #ffffff url(./images/triangle_up.png) no-repeat;
+}
+
+/* NBA商店结束 */
+
+/* 导航菜单 */
+.nav {
+    height: 60px;
+    width: 100%;
+    background: #1e518c;
+}
+
+.nav .nav-menu {
+    height: 60px;
+}
+
+.nav ul li {
+    width: 75px;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.nav ul li.cur {
+    background: #2a6cb6;
+}
+
+.nav ul li.cur a {
+    color: #fff;
+}
+
+.nav ul li a {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+}
+
+.nav ul li .second-wrap {
+    display: none;
+    position: absolute;
+    width: 110px;
+    z-index: 2;
+    top: 56px;
+    left: 0;
+    white-space: nowrap;
+    background: #2a6cb6;
+    z-index: 2000;
+}
+
+.nav ul li .nab-team {
+    width: 726px;
+}
+
+.nav ul li.cur .second-wrap {
+    display: block;
+}
+
+.nav ul li .second-wrap .senond-item {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #2560a2;
+}
+
+.nav ul li .second-wrap .nav-hover {
+    background: #1d5ba3;
+}
+
+.nav ul li .second-wrap .senond-item a {
+    font-size: 18px;
+    color: #fff;
+}
+
+.team-list {
+    table-layout: fixed;
+    line-height: initial;
+}
+
+.team-list th {
+    height: 40px;
+    padding-left: 20px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.team-list th.team-area {
+    font-size: 16px;
+}
+
+.team-list td {
+    height: 55px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.team-list td.team-hover {
+    background: #1d5ba3;
+}
+
+.nav ul li .team-list td a {
+    display: block;
+    width: 120px;
+    height: 60px;
+    line-height: 60px;
+    text-indent: 60px;
+    font-size: 14px;
+}
+
+.team-list td a.celtics {
+    background: url(./images/teamlogo50x60/celtics.png) 12px 12px no-repeat;
+}
+.team-list td a.nets {
+    background: url(./images/teamlogo50x60/nets.png) 12px 12px no-repeat;
+}
+.team-list td a.knicks {
+    background: url(./images/teamlogo50x60/knicks.png) 12px 12px no-repeat;
+}
+.team-list td a.s76ers {
+    background: url(./images/teamlogo50x60/76ers.png) 12px 12px no-repeat;
+}
+.team-list td a.raptors {
+    background: url(./images/teamlogo50x60/raptors.png) 12px 12px no-repeat;
+}
+.team-list td a.bulls {
+    background: url(./images/teamlogo50x60/bulls.png) 12px 12px no-repeat;
+}
+.team-list td a.cavaliers {
+    background: url(./images/teamlogo50x60/cavaliers.png) 12px 12px no-repeat;
+}
+.team-list td a.pistons {
+    background: url(./images/teamlogo50x60/pistons.png) 12px 12px no-repeat;
+}
+.team-list td a.pacers {
+    background: url(./images/teamlogo50x60/pacers.png) 12px 12px no-repeat;
+}
+.team-list td a.bucks {
+    background: url(./images/teamlogo50x60/bucks.png) 12px 12px no-repeat;
+}
+.team-list td a.hawks {
+    background: url(./images/teamlogo50x60/hawks.png) 12px 12px no-repeat;
+}
+.team-list td a.hornets {
+    background: url(./images/teamlogo50x60/hornets.png) 12px 12px no-repeat;
+}
+.team-list td a.heat {
+    background: url(./images/teamlogo50x60/heat.png) 12px 12px no-repeat;
+}
+.team-list td a.magic {
+    background: url(./images/teamlogo50x60/magic.png) 12px 12px no-repeat;
+}
+.team-list td a.wizards {
+    background: url(./images/teamlogo50x60/wizards.png) 12px 12px no-repeat;
+}
+.team-list td a.nuggets {
+    background: url(./images/teamlogo50x60/nuggets.png) 12px 12px no-repeat;
+}
+.team-list td a.timber_wolves {
+    background: url(./images/teamlogo50x60/timber_wolves.png) 12px 12px no-repeat;
+}
+.team-list td a.thunder {
+    background: url(./images/teamlogo50x60/thunder.png) 12px 12px no-repeat;
+}
+.team-list td a.trail_blazers {
+    background: url(./images/teamlogo50x60/trail_blazers.png) 12px 12px no-repeat;
+}
+.team-list td a.jazz {
+    background: url(./images/teamlogo50x60/jazz.png) 12px 12px no-repeat;
+}
+.team-list td a.warriors {
+    background: url(./images/teamlogo50x60/warriors.png) 12px 12px no-repeat;
+}
+.team-list td a.clippers {
+    background: url(./images/teamlogo50x60/clippers.png) 12px 12px no-repeat;
+}
+.team-list td a.lakers {
+    background: url(./images/teamlogo50x60/lakers.png) 12px 12px no-repeat;
+}
+.team-list td a.suns {
+    background: url(./images/teamlogo50x60/suns.png) 12px 12px no-repeat;
+}
+.team-list td a.kings {
+    background: url(./images/teamlogo50x60/kings.png) 12px 12px no-repeat;
+}
+.team-list td a.mavericks {
+    background: url(./images/teamlogo50x60/mavericks.png) 12px 12px no-repeat;
+}
+.team-list td a.rockets {
+    background: url(./images/teamlogo50x60/rockets.png) 12px 12px no-repeat;
+}
+.team-list td a.grizzlies {
+    background: url(./images/teamlogo50x60/grizzlies.png) 12px 12px no-repeat;
+}
+.team-list td a.pelicans {
+    background: url(./images/teamlogo50x60/pelicans.png) 12px 12px no-repeat;
+}
+.team-list td a.spurs {
+    background: url(./images/teamlogo50x60/spurs.png) 12px 12px no-repeat;
+}
+/* 导航菜单 */
+
+/* header End */

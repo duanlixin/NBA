@@ -1,0 +1,43 @@
+#east-west-side {
+    width: 998px;
+    height: 307px;
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+}
+
+#east-west-side .east-box {
+    width: 470px;
+    float: left;
+    padding-left: 8px;
+}
+
+.east-box h2, .west-box h2 {
+    padding-top: 18px;
+    padding-left: 190px;
+    font-weight: normal;
+    color: #454545;
+    font-size: 16px;
+    background: url("images/db_x_03.png") no-repeat 75px 28px;
+}
+
+.east-box ul, .west-box ul {
+    overflow: hidden;
+}
+
+.east-box ul li, .west-box ul li {
+    width: 72px;
+    height: 60px;
+    display: block;
+    float: left;
+    padding: 12px 10px;
+}
+
+#east-west-side .west-box {
+    width: 470px;
+    float: right;
+}

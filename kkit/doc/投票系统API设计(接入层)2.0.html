@@ -1,0 +1,1220 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>投票系统API设计(接入层)2.0</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+		/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+		/* Author: Nicolas Hery - http://nicolashery.com */
+		/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+		/* Source: https://github.com/nicolahery/markdownpad-github */
+
+		/* RESET
+        =============================================================================*/
+
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+
+		/* BODY
+        =============================================================================*/
+
+		body {
+			font-family: Helvetica, arial, freesans, clean, sans-serif;
+			font-size: 14px;
+			line-height: 1.6;
+			color: #333;
+			background-color: #fff;
+			padding: 20px;
+			max-width: 960px;
+			margin: 0 auto;
+		}
+
+		body>*:first-child {
+			margin-top: 0 !important;
+		}
+
+		body>*:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		/* BLOCKS
+        =============================================================================*/
+
+		p, blockquote, ul, ol, dl, table, pre {
+			margin: 15px 0;
+		}
+
+		/* HEADERS
+        =============================================================================*/
+
+		h1, h2, h3, h4, h5, h6 {
+			margin: 20px 0 10px;
+			padding: 0;
+			font-weight: bold;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+			font-size: inherit;
+		}
+
+		h1 {
+			font-size: 28px;
+			color: #000;
+		}
+
+		h2 {
+			font-size: 24px;
+			border-bottom: 1px solid #ccc;
+			color: #000;
+		}
+
+		h3 {
+			font-size: 18px;
+		}
+
+		h4 {
+			font-size: 16px;
+		}
+
+		h5 {
+			font-size: 14px;
+		}
+
+		h6 {
+			color: #777;
+			font-size: 14px;
+		}
+
+		body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+		a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+		h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+			margin-top: 10px;
+		}
+
+		/* LINKS
+        =============================================================================*/
+
+		a {
+			color: #4183C4;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		/* LISTS
+        =============================================================================*/
+
+		ul, ol {
+			padding-left: 30px;
+		}
+
+		ul li > :first-child,
+		ol li > :first-child,
+		ul li ul:first-of-type,
+		ol li ol:first-of-type,
+		ul li ol:first-of-type,
+		ol li ul:first-of-type {
+			margin-top: 0px;
+		}
+
+		ul ul, ul ol, ol ol, ol ul {
+			margin-bottom: 0;
+		}
+
+		dl {
+			padding: 0;
+		}
+
+		dl dt {
+			font-size: 14px;
+			font-weight: bold;
+			font-style: italic;
+			padding: 0;
+			margin: 15px 0 5px;
+		}
+
+		dl dt:first-child {
+			padding: 0;
+		}
+
+		dl dt>:first-child {
+			margin-top: 0px;
+		}
+
+		dl dt>:last-child {
+			margin-bottom: 0px;
+		}
+
+		dl dd {
+			margin: 0 0 15px;
+			padding: 0 15px;
+		}
+
+		dl dd>:first-child {
+			margin-top: 0px;
+		}
+
+		dl dd>:last-child {
+			margin-bottom: 0px;
+		}
+
+		/* CODE
+        =============================================================================*/
+
+		pre, code, tt {
+			font-size: 12px;
+			font-family: Consolas, "Liberation Mono", Courier, monospace;
+		}
+
+		code, tt {
+			margin: 0 0px;
+			padding: 0px 0px;
+			white-space: nowrap;
+			border: 1px solid #eaeaea;
+			background-color: #f8f8f8;
+			border-radius: 3px;
+		}
+
+		pre>code {
+			margin: 0;
+			padding: 0;
+			white-space: pre;
+			border: none;
+			background: transparent;
+		}
+
+		pre {
+			background-color: #f8f8f8;
+			border: 1px solid #ccc;
+			font-size: 13px;
+			line-height: 19px;
+			overflow: auto;
+			padding: 6px 10px;
+			border-radius: 3px;
+		}
+
+		pre code, pre tt {
+			background-color: transparent;
+			border: none;
+		}
+
+		kbd {
+			-moz-border-bottom-colors: none;
+			-moz-border-left-colors: none;
+			-moz-border-right-colors: none;
+			-moz-border-top-colors: none;
+			background-color: #DDDDDD;
+			background-image: linear-gradient(#F1F1F1, #DDDDDD);
+			background-repeat: repeat-x;
+			border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+			border-image: none;
+			border-radius: 2px 2px 2px 2px;
+			border-style: solid;
+			border-width: 1px;
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			line-height: 10px;
+			padding: 1px 4px;
+		}
+
+		/* QUOTES
+        =============================================================================*/
+
+		blockquote {
+			border-left: 4px solid #DDD;
+			padding: 0 15px;
+			color: #777;
+		}
+
+		blockquote>:first-child {
+			margin-top: 0px;
+		}
+
+		blockquote>:last-child {
+			margin-bottom: 0px;
+		}
+
+		/* HORIZONTAL RULES
+        =============================================================================*/
+
+		hr {
+			clear: both;
+			margin: 15px 0;
+			height: 0px;
+			overflow: hidden;
+			border: none;
+			background: transparent;
+			border-bottom: 4px solid #ddd;
+			padding: 0;
+		}
+
+		/* TABLES
+        =============================================================================*/
+
+		table th {
+			font-weight: bold;
+		}
+
+		table th, table td {
+			border: 1px solid #ccc;
+			padding: 6px 13px;
+		}
+
+		table tr {
+			border-top: 1px solid #ccc;
+			background-color: #fff;
+		}
+
+		table tr:nth-child(2n) {
+			background-color: #f8f8f8;
+		}
+
+		/* IMAGES
+        =============================================================================*/
+
+		img {
+			max-width: 100%
+		}
+	</style>
+</head>
+<body>
+<h1>投票系统API设计接入层</h1>
+<hr />
+<h1>版本：v2.0</h1>
+<hr />
+<h1>版本历史</h1>
+<table border="1">
+	<tr>
+		<th>version</th><th>author</th><th>date</th><th>detail</th>
+	</tr>
+	<tr>
+		<td>V2.0</td><td>bensonxu</td><td>2014.03.28</td><td>初始版本</td>
+	</tr>
+</table>
+<hr />
+<h1>目录</h1>
+<p>[TOC]</p>
+<hr />
+<h1>设计原则</h1>
+<p>按照REST原则对各层API进行设计，以RESTful API形式对外提供服务，以json（或其他）形式对外提供输出。</p>
+<hr />
+<h1>常用字段解释</h1>
+<ul>
+	<li><code>voteid</code>:		调查的全局唯一ID</li>
+	<li><code>subjectid</code>:	问题的全局唯一ID</li>
+	<li><code>optionid</code>:		选项的全局唯一ID</li>
+	<li><code>detailid</code>:		答案的全局唯一ID</li>
+	<li><code>callback</code>:		json格式的回调函数名称</li>
+	<li><code>source</code>:		请求来源	</li>
+</ul>
+<hr />
+<h1>接入层API设计</h1>
+<h2>调查相关API</h2>
+<h3>拉取投票题目接口</h3>
+<ul>
+	<li>
+		<p>URI:
+			<code>GET 	/v2/vote/&lt;voteid&gt;?source[&amp;login&amp;account]&amp;[openid]&amp;[sid]</code></p>
+	</li>
+	<li>
+		<p>参数说明: </p>
+<pre>voteid:  投票id
+当参数有login和对应登陆态，会返回用户投票频率frequence和
+cycletime（投票时间间隔（单位为秒）、votecount（在cycletime时间内最多投多少票）
+login: （可选参数）1:qq 2:微信 4:手机QQ
+		当login=1 传account=$uin或者cookie带qq登陆态
+	    	当login=2 传access_token，openid
+		当login=4  传sid</pre>
+	</li>
+	<li>
+		<p>返回数据: </p>
+<pre><code>callback({
+	&quot;code&quot;: 0,
+	&quot;data&quot;: {
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;frequence&quot;: 1,
+	&quot;cycletime&quot;: &quot;60&quot;,
+	&quot;votecount&quot;: &quot;2&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;subtitle&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;type&quot;: &quot;&quot;,
+	&quot;subtype&quot;: &quot;&quot;,
+	&quot;starttime&quot;: &quot;&quot;,
+	&quot;endtime&quot;: &quot;&quot;,
+	&quot;showflag&quot;: &quot;&quot;,
+	&quot;jointype&quot;: &quot;&quot;,
+	&quot;voteuserinfo&quot;: &quot;&quot;,
+	&quot;toppic&quot;: &quot;&quot;,
+	&quot;votedtotal&quot;: ,
+	&quot;participant&quot;: ,
+	&quot;keyword&quot;:,
+	&quot;attachment&quot;:,
+	&quot;section&quot;:
+	&quot;subject&quot;: [
+	{
+	&quot;subjectid&quot;: ,
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;answer&quot;: &quot;&quot;,
+	&quot;answertype&quot;: &quot;&quot;,
+	&quot;optiontype&quot;: &quot;&quot;,
+	&quot;selectmax&quot;: &quot;&quot;,
+	&quot;placeholder&quot;: &quot;&quot;,
+	&quot;otheranswer&quot;: &quot;&quot;,
+	&quot;theme&quot;: &quot;&quot;,
+	&quot;tag&quot;:&quot;&quot;
+	&quot;votedtotal&quot;: ,
+	&quot;option&quot;: [
+	{
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;subjectid&quot;: &quot;&quot;,
+	&quot;optionid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;placeholder&quot;: &quot;&quot;,
+	&quot;otheranswer&quot;: &quot;&quot;,
+	&quot;theme&quot;: &quot;&quot;,
+	&quot;percent&quot;: ,
+	&quot;selected&quot;: &quot;&quot;,
+	&quot;score&quot;:  &quot;&quot;
+	},
+	{
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;subjectid&quot;: &quot;&quot;,
+	&quot;optionid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;placeholder&quot;: &quot;&quot;,
+	&quot;otheranswer&quot;: &quot;&quot;,
+	&quot;theme&quot;: &quot;&quot;,
+	&quot;percent&quot;: ,
+	&quot;selected&quot;: &quot;&quot;,
+	&quot;score&quot;:  &quot;&quot;
+	}
+	]
+	}
+	]
+	}
+	})
+</code></pre>
+
+	</li>
+</ul>
+<h3>进行投票接口</h3>
+<ul>
+	<li>
+		URI:
+		<code>POST 	/v2/vote/&lt;voteid&gt;/submit?source&amp;login&amp;answer[&amp;appid&amp;access_token&amp;openid][rank&amp;score&amp;second][sid][panshiid][access_token&amp;uid]</code>
+	</li>
+	<li>
+		参数说明:
+<pre>     voteid:	投票id
+　　　login:	登录类型（0：未登录，1：QQ登录，2：微信登录, 4:手机QQ登录, 5:新浪微博登陆）
+		微信登录时：需要传递appid，access_token，openid
+		手机qq登陆时：需要传递sid
+		新浪微博登陆时：需要传递access_token，uid
+　　　answer:	投票信息
+　　　rank:	需要排名 （0：不需排名，1：需要排名）
+　　　score:	问卷得分
+　　　second:   答题所用时间
+     panshiid: 区分不同应用id  例：panshiid = 10002则为high歌
+</pre>
+	</li>
+	<li>
+		<p>参数格式: </p>
+<pre><code>answer= '[
+	&quot;subjectid1&quot;:{
+	&quot;selected&quot;: [
+	&quot;optionid1&quot;,
+	&quot;optionid2&quot;
+	],
+	&quot;others&quot;:{
+	&quot;optionid3&quot;: &quot;content&quot;,
+	&quot;optionid4&quot;: &quot;content&quot;
+	}
+	},
+	&quot;subjectid2&quot;:{
+	&quot;selected&quot;: [
+	&quot;optionid1&quot;,
+	&quot;optionid2&quot;
+	],
+	&quot;others&quot;:{
+	&quot;optionid3&quot;: &quot;content&quot;,
+	&quot;optionid4&quot;: &quot;content&quot;
+	}
+	}
+	]'
+</code></pre>
+
+	</li>
+	<li>
+		<p>返回数据</p>
+<pre><code> callback({
+	&quot;code&quot;: 0,
+	&quot;data&quot;: {
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;total&quot;: ,
+	&quot;rank&quot;:&quot;&quot;,
+	&quot;score&quot;:&quot;&quot;,
+	&quot;subject&quot;: [
+	{
+	&quot;subjectid&quot;: ,
+	&quot;total&quot;: ,
+	&quot;option&quot;: [
+	{
+	&quot;optionid&quot;: ,
+	&quot;selected&quot;: ,
+	&quot;percent&quot;:
+	}
+	]
+	},
+	{
+	&quot;subjectid&quot;: ,
+	&quot;total&quot;: ,
+	&quot;option&quot;: [
+	{
+	&quot;optionid&quot;: ,
+	&quot;selected&quot;: ,
+	&quot;percent&quot;:
+	}
+	]
+	}
+	]
+	}
+	})
+</code></pre>
+
+	</li>
+</ul>
+<h3>拉取投票结果接口</h3>
+<ul>
+	<li>URI:
+		　　　　　<code>GET /v2/vote/&lt;voteid&gt;/result?source</code></li>
+	<li>
+		参数说明:
+		<pre>voteid:  投票id</pre>
+	</li>
+	<li>参数格式:</li>
+	<li>
+		<p>返回数据:</p>
+<pre><code>callback({
+	&quot;code&quot;: ,
+	&quot;data&quot;: {
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;total&quot;: ,
+	&quot;rank&quot;:&quot;&quot;,
+	&quot;score&quot;:&quot;&quot;,
+	&quot;subject&quot;: [
+	{
+	&quot;subjectid&quot;: ,
+	&quot;total&quot;: ,
+	&quot;option&quot;: [
+	{
+	&quot;optionid&quot;: ,
+	&quot;selected&quot;: ,
+	&quot;percent&quot;:
+	},
+	{
+	&quot;optionid&quot;: ,
+	&quot;selected&quot;: ,
+	&quot;percent&quot;:
+	}
+	]
+	}
+	]
+	}
+	})
+</code></pre>
+
+	</li>
+</ul>
+<h3>拉取用户投票详情</h3>
+<ul>
+	<li>
+		<p>URI:
+			　<code>GET /v2/vote/&lt;voteid&gt;/detail?source&amp;login&amp;[&amp;appid&amp;access_token&amp;openid][sid][account]</code></p>
+	</li>
+	<li>
+		<p>参数说明:
+	<pre>
+	login:  登录类型（1：QQ登录，2：微信登录, 3:deviceid 4：手机QQ登陆 ）
+	微信登录时，需要传递appid，access_token，openid
+	手机qq登陆时：需要传递sid
+	deviceid:需要传account=deviceid
+	当用户有rank和score信息才会返回rank、score
+	</pre></p>
+	</li>
+	<li>参数格式:</li>
+	<li>
+		<p>返回数据:</p>
+<pre><code>callback({
+	&quot;code&quot; : 0,
+	&quot;msg&quot; : &quot;&quot;,
+	&quot;data&quot;:{
+	&quot;voteid&quot;:,
+	&quot;uin&quot;:,
+	&quot;deviceid&quot;:&quot;&quot;,
+	&quot;weixinid&quot;:&quot;&quot;,
+	&quot;sinaweiboid&quot;:&quot;&quot;,
+	&quot;ip&quot;:&quot;&quot;,
+	&quot;votetime&quot;:&quot;&quot;,
+	&quot;rank&quot;:&quot;&quot;,
+	&quot;score&quot;:&quot;&quot;,
+	&quot;detail&quot;:
+	&quot;{
+	&quot;subjectid1&quot;:{
+	&quot;selected&quot;: [
+	&quot;optionid1&quot;,
+	&quot;optionid2&quot;
+	],
+	&quot;others&quot;:{
+	&quot;optionid3&quot;: &quot;content&quot;,
+	&quot;optionid4&quot;: &quot;content&quot;
+	}
+	},
+	&quot;subjectid2&quot;:{
+	&quot;selected&quot;: [
+	&quot;optionid1&quot;,
+	&quot;optionid2&quot;
+	],
+	&quot;others&quot;:{
+	&quot;optionid3&quot;: &quot;content&quot;,
+	&quot;optionid4&quot;: &quot;content&quot;
+	}
+	}
+	}&quot;
+	}
+	})
+</code></pre>
+
+	</li>
+</ul>
+<h3>拉取用户投票+明细接口</h3>
+<ul>
+	<li>URI:
+		　　　　　<code>GET /v2/vote/&lt;voteid&gt;/voteinfo?source&amp;login&amp;[&amp;appid&amp;access_token&amp;openid][sid][account]</code></li>
+	<li>
+		参数说明:
+	<pre>
+	login:  登录类型（1：QQ登录，2：微信登录, 3:deviceid 4：手机QQ登陆 ）
+	微信登录时，需要传递appid，access_token，openid
+	手机qq登陆时：需要传递sid
+	deviceid:需要传account=deviceid
+	</pre>
+	</li>
+	<li>参数格式:</li>
+	<li>
+		<p>返回数据:</p>
+<pre><code>{
+	code: 0,
+	data: {
+	voteinfo: {
+	voteid: &quot;10001953&quot;,
+	cycletime: &quot;86400&quot;,
+	votecount: &quot;10&quot;,
+	title: &quot;xxx&quot;,
+	subtitle: &quot;&quot;,
+	desc: &quot;&quot;,
+	type: &quot;2&quot;,
+	subtype: &quot;4&quot;,
+	starttime: &quot;2014-12-29 &quot;,
+	endtime: &quot;2015-02-28 00:00&quot;,
+	showflag: &quot;2&quot;,
+	jointype: &quot;6&quot;,
+	voteuserinfo: &quot;0&quot;,
+	toppic: &quot;&quot;,
+	keyword: &quot;&quot;,
+	attachment: &quot;&quot;,
+	section: [ ],
+	votedtotal: 1,
+	participant: 1,
+	subject: [
+	{
+	subjectid: 3170,
+	voteid: &quot;10001953&quot;,
+	title: &quot;xx&quot;,
+	desc: &quot;&quot;,
+	answer: &quot;&quot;,
+	answertype: &quot;2&quot;,
+	optiontype: &quot;1&quot;,
+	selectmax: &quot;0&quot;,
+	placeholder: &quot;0&quot;,
+	otheranswer: &quot;0&quot;,
+	theme: &quot;&quot;,
+	tag: &quot;&quot;,
+	votedtotal: 1,
+	option: [
+	{
+	score: &quot;0&quot;,
+	voteid: &quot;10001953&quot;,
+	subjectid: &quot;3170&quot;,
+	optionid: &quot;7231&quot;,
+	title: &quot;12&quot;,
+	desc: &quot;&quot;,
+	placeholder: &quot;&quot;,
+	otheranswer: &quot;0&quot;,
+	theme: &quot;&quot;,
+	percent: 100,
+	selected: 1
+	},
+	{
+	score: &quot;0&quot;,
+	voteid: &quot;10001953&quot;,
+	subjectid: &quot;3170&quot;,
+	optionid: &quot;7232&quot;,
+	title: &quot;22&quot;,
+	desc: &quot;&quot;,
+	placeholder: &quot;&quot;,
+	otheranswer: &quot;0&quot;,
+	theme: &quot;&quot;,
+	percent: 0,
+	selected: 0
+	}
+	]
+	}
+	]
+	},
+	detail: {
+	uin: 2417390137,
+	login: &quot;1&quot;,
+	detail: &quot;{&quot;3170&quot;:{&quot;selected&quot;:[&quot;7231&quot;]}}&quot;,
+	voteid: &quot;10001953&quot;,
+	ip: 169263634,
+	votetime: &quot;2015-01-30 14:54:55&quot;,
+	frequence: &quot;1&quot;
+	}
+	}
+</code></pre>
+
+		<p>}</p>
+	</li>
+</ul>
+<h3>拉取投票组信息接口</h3>
+<ul>
+	<li>URI:
+		　　　　　<code>GET /v2/vote/group/&lt;groupid&gt;?source&amp;[desc]</code></li>
+	<li>
+		参数说明:
+	<pre>
+	groupid：	投票组id
+	desc: 可选字段，传true就是按照投票id降序排列
+	</pre>
+	</li>
+	<li>参数格式:</li>
+	<li>返回数据:</li>
+	<li>
+<pre><code>callback({
+	&quot;code&quot;: 0,
+	&quot;data&quot;: {
+	&quot;groupid&quot;: &quot;&quot;,
+	&quot;vote&quot;: [
+	{
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;subtitle&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;type&quot;: &quot;&quot;,
+	&quot;subtype&quot;: &quot;&quot;,
+	&quot;starttime&quot;: &quot;&quot;,
+	&quot;endtime&quot;: &quot;&quot;,
+	&quot;showflag&quot;: &quot;&quot;,
+	&quot;toppic&quot;: &quot;&quot;
+	},
+	{
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;subtitle&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;type&quot;: &quot;&quot;,
+	&quot;subtype&quot;: &quot;&quot;,
+	&quot;starttime&quot;: &quot;&quot;,
+	&quot;endtime&quot;: &quot;&quot;,
+	&quot;showflag&quot;: &quot;&quot;,
+	&quot;toppic&quot;: &quot;&quot;
+	}
+	],
+	&quot;total&quot;:
+	}
+</code></pre>
+
+		})
+	</li>
+</ul>
+<h3>拉取榜单接口</h3>
+<ul>
+	<li>URI:
+		　　　　　<code>GET /v2/vote/&lt;voteid&gt;/list?tag[&amp;otype&amp;oby&amp;ovalue]&amp;source</code></li>
+	<li>
+		参数说明:
+	<pre>voteid:	投票id
+tag:	题目分类（tag=all：拉取榜单所有信息）
+otype:	排序类型（1：题目排序，2：选项排序）
+oby：	排序字段（otype=2时启用）
+ovalue：	排序字段内容（otype=2时启用）</pre>
+	</li>
+	<li>参数格式:</li>
+	<li>返回数据:</li>
+	<li>
+<pre><code>callback({
+	&quot;code&quot;: 0,
+	&quot;data&quot;: {
+	&quot;title&quot;: &quot;&quot;,
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;subtitle&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;type&quot;: &quot;&quot;,
+	&quot;subtype&quot;: &quot;&quot;,
+	&quot;starttime&quot;: &quot;&quot;,
+	&quot;endtime&quot;: &quot;&quot;,
+	&quot;showflag&quot;: &quot;&quot;,
+	&quot;jointype&quot;: &quot;&quot;,
+	&quot;voteuserinfo&quot;: &quot;&quot;,
+	&quot;toppic&quot;: &quot;&quot;,
+	&quot;subject&quot;: [
+	{
+	&quot;subjectid&quot;: ,
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;tt&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;answer&quot;: &quot;&quot;,
+	&quot;answertype&quot;: &quot;&quot;,
+	&quot;optiontype&quot;: &quot;&quot;,
+	&quot;selectmax&quot;: &quot;&quot;,
+	&quot;placeholder&quot;: &quot;&quot;,
+	&quot;otheranswer&quot;: &quot;&quot;,
+	&quot;theme&quot;: &quot;&quot;,
+	&quot;tag&quot;: &quot;&quot;,
+	&quot;option&quot;: [
+	{
+	&quot;voteid&quot;: &quot;&quot;,
+	&quot;subjectid&quot;: &quot;&quot;,
+	&quot;optionid&quot;: &quot;&quot;,
+	&quot;title&quot;: &quot;&quot;,
+	&quot;desc&quot;: &quot;&quot;,
+	&quot;placeholder&quot;: &quot;&quot;,
+	&quot;otheranswer&quot;: &quot;&quot;,
+	&quot;theme&quot;: &quot;&quot;,
+	&quot;answer&quot;: &quot;&quot;,
+	&quot;answertype&quot;: &quot;&quot;,
+	&quot;optiontype&quot;: &quot;&quot;,
+	&quot;selectmax&quot;: &quot;&quot;,
+	&quot;total&quot;:
+	}
+	],
+	&quot;total&quot;: ,
+	&quot;rank&quot;:
+	}
+	],
+	&quot;total&quot;:
+	}
+</code></pre>
+
+		})
+	</li>
+</ul>
+<h3>拉取相同选择答案的好友列表</h3>
+<ul>
+	<li>URI:
+		　　　　　<code>GET  /v2/vote/&lt;voteid&gt;/sameanswer/friendlist?source&amp;login&amp;account&amp;answer</code></li>
+	<li>
+		参数说明:
+	<pre>voteid:	投票id
+source:	 投票来源
+login:	 登录方式：1 ：qq  (目前只支持qq用户)
+account：当login=1 account=$uin(目前只支持qq用户)
+answer：	 提交投票时候的选择详情</pre>
+	</li>
+	<li>参数格式:</li>
+	<li>返回数据:</li>
+	<li>
+<pre><code>callback({
+	&quot;code&quot; : 0,
+	&quot;msg&quot; : &quot;&quot;,
+	&quot;data&quot;:{
+	“2417390137”：{
+	“nick”:“回忆的沙漏”，
+	“head”：“http://q2.qlogo.cn/g?b=qq&amp;k=jibkQtL686fLORWSNWDC5Uw&amp;s=40&amp;t=537”
+	}
+	“123456787”：{
+	“nick”:“大木一”，
+	“head”：“http://q2.qlogo.cn/g?b=qq&amp;k=jibkQtL686fLORWSNWDC5Uw&amp;s=40&amp;t=537”
+	}
+	}
+	})
+</code></pre>
+
+	</li>
+</ul>
+<h2>接口字段说明</h2>
+<h3>投票字段</h3>
+<hr />
+<table>
+	<tr>
+		<th>Field</td>
+		<th>detail</td>
+	</tr>
+	<tr>
+		<td>voteid</td>
+		<td>调查id</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>调查标题</td>
+	</tr>
+	<tr>
+		<td>subtitle</td>
+		<td>调查子标题</td>
+	</tr>
+	<tr>
+		<td>desc</td>
+		<td>调查描述</td>
+	</tr>
+	<tr>
+		<td>type</td>
+		<td>调查类型1：评星调查2：问卷调查3：图片投票</td>
+	</tr>
+	<tr>
+		<td>subtype</td>
+		<td>子调查类型：1：快速评价2：阅读心情3：悼念献花4：评星</td>
+	</tr>
+	<tr>
+		<td>showflag</td>
+		<td>结果显示1：默认显示2：提交后显示3：不显示</td>
+	</tr>
+	<tr>
+		<td>jointype</td>
+		<td>参与类型：0x01：匿名参与0x02：qq登录参与0x04：微信登录0x08：内网投票</td>
+	</tr>
+	<tr>
+		<td>toppic</td>
+		<td>自定义top图</td>
+	</tr>
+</table>
+<h1>V1版本部分接口</h1>
+<h3>按投票组拉取投票题目信息接口</h3>
+<ul>
+	<li>
+		<p>URI:
+			<code>GET /vote/group/&lt;groupid&gt;/subjectinfo?source&amp;[list&amp;orderby&amp;ordervalue&amp;login&amp;account]</code></p>
+	</li>
+	<li>
+		<p>参数说明: </p>
+<pre>
+groupid：	投票组id
+list：		排行榜字段（1：总榜，3：年榜，6：月榜，9：周榜）
+orderby： 	排序依据默认‘tilte’
+ordervalue：	排序依据值：比如选项的title值为‘yes’
+login ： 	用户登录状态 ： 1.qq 2.微信 3.设备
+account：	用户信息 注：
+		当login=1时 account传uin
+		当login=2时 account传openid
+		当login=3时 account传deviceid
+　　　	</pre>
+	</li>
+	<li>参数格式: </li>
+	<li>
+		<p>返回数据：</p>
+<pre><code>callback({
+	{
+	errCode: 0,
+	data: {
+	list:  //组所在投票列表
+	[
+	{ //投票相关信息
+	detailflag: &quot;1&quot;,
+	subtitle: &quot;&quot;,
+	desc: &quot;&quot;,
+	level: &quot;1&quot;,
+	groupid: &quot;10000006&quot;,
+	pubstatus: &quot;0&quot;,
+	ctime: &quot;2014-06-25 16:35:15&quot;,
+	mtime: &quot;2014-06-25 16:35:15&quot;,
+	shareflag: &quot;0&quot;,
+	showflag: &quot;2&quot;,
+	jointype: &quot;6&quot;,
+	voteuserinfo: &quot;0&quot;,
+	toppic: &quot;&quot;,
+	ruleid: &quot;4&quot;,
+	limitobject: &quot;0&quot;,
+	cycletime: &quot;86400&quot;,
+	votecount: &quot;1&quot;,
+	votetotal: &quot;100000&quot;,
+	votedtotal: &quot;18&quot;,
+	participant: &quot;18&quot;,
+	isdeleted: &quot;0&quot;,
+	ext1: &quot;0&quot;,
+	ext2: &quot;0&quot;,
+	ext3: &quot;0&quot;,
+	ext4: &quot;&quot;,
+	ext5: &quot;&quot;,
+	ext6: &quot;&quot;,
+	title: &quot;李代沫&quot;,
+	type: &quot;1&quot;,
+	subtype: &quot;4&quot;,
+	site: &quot;v_variety&quot;,
+	creator: &quot;phobeyu&quot;,
+	starttime: &quot;2014-06-25 16:33&quot;,
+	endtime: &quot;2015-07-11 16:30&quot;,
+	voteid: &quot;10004832&quot;,
+	todaycount: &quot;1&quot;,
+	subjectinfo: //题目信息
+	[
+	{
+	desc: &quot;&quot;,
+	answer: &quot;&quot;,
+	answertype: &quot;2&quot;,
+	optiontype: &quot;1&quot;,
+	selectmax: &quot;0&quot;,
+	placeholder: &quot;0&quot;,
+	otheranswer: &quot;0&quot;,
+	theme: &quot;&quot;,
+	votedtotal: &quot;18&quot;,
+	title: &quot;李代沫&quot;,
+	voteid: &quot;10004832&quot;,
+	subjectid: &quot;9609&quot;
+	}
+	],
+	optioninfo: //选项信息
+	[
+	{
+	desc: &quot;&quot;,
+	otheranswer: &quot;0&quot;,
+	length_min: &quot;0&quot;,
+	length_max: &quot;0&quot;,
+	theme: &quot;&quot;,
+	placeholder: &quot;&quot;,
+	votedtotal: &quot;18&quot;,
+	votedtotalset: &quot;0&quot;,
+	mtime: &quot;2014-06-30 09:48:30&quot;,
+	isdeleted: &quot;0&quot;,
+	ext1: &quot;0&quot;,
+	ext2: &quot;0&quot;,
+	ext3: &quot;0&quot;,
+	ext4: &quot;&quot;,
+	ext5: &quot;&quot;,
+	ext6: &quot;&quot;,
+	title: &quot;yes&quot;,
+	voteid: &quot;10004832&quot;,
+	subjectid: &quot;9609&quot;,
+	optionid: &quot;35164&quot;,
+	score: &quot;0&quot;
+	}
+	]
+	},
+	],
+	result: //投票结果信息
+	{
+	10004832: //投票ID
+	{
+	9609: //题目ID
+	{
+	35164:  //选项ID
+	{
+	selected: 18, //选项票数
+	percent: 100 //选项百分比
+	},
+	total: 18 //题目票数
+	},
+	total: 18  //投票票数
+	},
+	},
+	sort:  //排序后的投票ID列表（按照投票数）
+	[
+	10004832, //投票ID
+	10004833,
+	10004861,
+	10004863,
+	10004862,
+	10004858,
+	10004857
+	],
+	groupinfo: //投票所在组信息
+	{
+	name: &quot;谁能重返好声音&quot;,
+	desc: &quot;喜欢TA就为TA转身，转椅最多的选手将重返好声音舞台&quot;,
+	url: &quot;http://i.gtimg.cn/qqlive/images/20140618/i1403061855_1.jpg&quot;
+	}
+
+	}})
+</code></pre>
+
+	</li>
+</ul>
+<h3>按投票组拉取投票结果接口</h3>
+<ul>
+	<li>
+		<p>URI:
+			<code>GET /vote/group/&lt;groupid&gt;/result?source&amp;list[&amp;orderby&amp;ordervalue]</code></p>
+	</li>
+	<li>
+		<p>参数说明: </p>
+<pre>
+groupid：	投票组id
+list：		排行榜字段（1：总榜，3：年榜，6：月榜，9：周榜）
+orderby:	排序依据（如：选项的'title'字段）
+ordervalue:	排序依据的值（如：'YES'）
+　　　	</pre>
+	</li>
+	<li>参数格式: </li>
+	<li>
+		<p>返回数据：</p>
+<pre><code>callback({
+	errCode:0，
+	data:{
+	voteid1：｛
+	subjectid1:{
+	total:100,
+	optionid1:{selceted:100,percent:20},
+	optionid2:{selceted:100,percent:20},
+	optionid3:{selceted:100,percent:20},
+	optionid4:{selceted:100,percent:20}
+	},
+	subjectid2:{
+	total:100,
+	optionid1:{selceted:100,percent:20},
+	optionid2:{selceted:100,percent:20},
+	optionid3:{selceted:100,percent:20},
+	optionid4:{selceted:100,percent:20}
+	}
+	｝,
+	voteid2：｛
+	subjectid1:{
+	total:100,
+	optionid1:{selceted:100,percent:20},
+	optionid2:{selceted:100,percent:20},
+	optionid3:{selceted:100,percent:20},
+	optionid4:{selceted:100,percent:20}
+	},
+	subjectid2:{
+	total:100,
+	optionid1:{selceted:100,percent:20},
+	optionid2:{selceted:100,percent:20},
+	optionid3:{selceted:100,percent:20},
+	optionid4:{selceted:100,percent:20}
+	}
+	｝
+
+	}
+	})
+</code></pre>
+
+	</li>
+</ul>
+<h3>题目字段</h3>
+<hr />
+<table>
+	<tr>
+		<th>Field</td>
+		<th>detail</td>
+	</tr>
+	<tr>
+		<td>voteid</td>
+		<td>调查id</td>
+	</tr>
+	<tr>
+		<td>subjectid</td>
+		<td>题目id</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>题目标题</td>
+	</tr>
+	<tr>
+		<td>desc</td>
+		<td>题目描述</td>
+	</tr>
+	<tr>
+		<td>answer</td>
+		<td>题目答案</td>
+	</tr>
+	<tr>
+		<td>answertype</td>
+		<td>题目类型1：可选2：必选</td>
+	</tr>
+	<tr>
+		<td>optiontype</td>
+		<td>题目类型1：单选2：多选3：单行输入4：多行输入5：下拉列表</td>
+	</tr>
+	<tr>
+		<td>selectmax</td>
+		<td>多选时，最多的选项个数</td>
+	<tr>
+		<td>placeholder</td>
+		<td>提示词</td>
+	</tr>
+	<tr>
+		<td>otheranswer</td>
+		<td>是否含有其他选项0：不包含1：包含</td>
+	</tr>
+	<tr>
+		<td>theme</td>
+		<td>题目主题</td>
+	</tr>
+</table>
+<h3>选项字段</h3>
+<hr />
+<table>
+	<tr>
+		<th>Field</td>
+		<th>detail</td>
+	</tr>
+	<tr>
+		<td>voteid</td>
+		<td>调查id</td>
+	</tr>
+	<tr>
+		<td>subjectid</td>
+		<td>题目id</td>
+	</tr>
+	<tr>
+		<td>optionid</td>
+		<td>选项id</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>选项标题</td>
+	</tr>
+	<tr>
+		<td>desc</td>
+		<td>选项描述</td>
+	</tr>
+	<tr>
+		<td>otheranswer</td>
+		<td>该选项是不是其他选项 0：不是 1：是</td>
+	</tr>
+	<tr>
+		<td>length_min</td>
+		<td>输入项最小字数</td>
+	</tr>
+	<tr>
+		<td>length_max</td>
+		<td>输入项最大字数</td>
+	</tr>
+	<tr>
+		<td>theme</td>
+		<td>题目主题</td>
+	</tr>
+	<tr>
+		<td>placeholder</td>
+		<td>提示词</td>
+	</tr>
+</table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

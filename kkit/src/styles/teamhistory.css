@@ -1,0 +1,47 @@
+.history-layout {
+    width: 380px;
+    height: auto;
+}
+
+.history-layout h2 {
+    height: 39px;
+    line-height: 39px;
+    background: #1e518c;
+    border-bottom: 1px solid #be9d53;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 0 12px;
+}
+
+.history-layout h2 a {
+    color: #fff;
+}
+
+#history .history {
+    height: 90px;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+    padding: 20px 20px 20px 10px;
+    border: 1px solid #e8e8e8;
+}
+
+#history .history-con {
+    overflow: hidden;
+}
+
+#history .history-con dt {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+#history .history-con dt img {
+    width: 90px;
+    height: 90px;
+}
+
+#history .history-con dd {
+    width: 240px;
+}

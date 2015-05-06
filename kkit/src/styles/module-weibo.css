@@ -1,0 +1,99 @@
+#team-weibo {
+    width: 380px;
+    height: 386px;
+}
+
+.NBA-module-title {
+    height: 39px;
+    background: #1e518c;
+    border-bottom: 1px solid #be9d53;
+}
+
+.NBA-module-title h2 {
+    font-weight: normal;
+    padding-left: 10px;
+    line-height: 39px;
+    height: 39px;
+}
+
+.NBA-module-title h2 a {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.weibo-main {
+    padding: 10px 9px 0 9px;
+    height: 335px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    background: #ffffff;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+}
+
+.weibo-main dl {
+    height: 100px;
+    overflow: hidden;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.weibo-main dl dt {
+    float: left;
+    width: 80px;
+    margin: 10px 0;
+}
+
+.weibo-main dl dt img {
+    width: 78px;
+    height: 78px;
+    border: 1px solid #e5e5e5;
+}
+
+.weibo-main dl dd {
+    float: left;
+    width: 250px;
+    padding-left: 20px;
+}
+
+.weibo-main dl dd p.weibo-article {
+    font-size: 16px;
+    padding: 12px 0;
+}
+
+.weibo-main dl dd p.weibo-article em {
+    display: inline-block;
+    width: 19px;
+    height: 14px;
+    background: url('images/icon_v_blue.jpg') no-repeat;
+}
+
+.weibo-main dl dd p.weibo-forward {
+    text-align: right;
+    font-size: 14px;
+}
+
+.weibo-main dl dd p.weibo-forward i {
+    color: #7a7a7a;
+    font-style: normal;
+    padding: 0 10px;
+}
+
+.weibo-main dl dd p.weibo-forward a {
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+.weibo-main dl.borderNone {
+    border-bottom: none;
+}
+
+.weibo-main .group {
+    text-align: right;
+    font-size: 16px;
+}
+
+.weibo-main .group a {
+    color: #2a6cb6;
+}

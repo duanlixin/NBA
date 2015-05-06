@@ -1,0 +1,56 @@
+#social-media {
+    width: 380px;
+    height: 185px;
+}
+
+.NBA-module-title {
+    height: 39px;
+    background: #1e518c;
+    border-bottom: 1px solid #be9d53;
+}
+
+.NBA-module-title h2 {
+    font-weight: normal;
+    padding-left: 10px;
+    line-height: 39px;
+    height: 39px;
+}
+
+.NBA-module-title h2 a {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.social-media-content {
+    height: 145px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+}
+
+.social-media-content ul {
+    overflow: hidden;
+    padding-left: 2px;
+}
+
+.social-media-content ul li {
+    float: left;
+    width: 70px;
+    padding: 30px 27px 0 28px;
+}
+
+.social-media-content ul li img {
+    width: 70px;
+    height: 70px;
+}
+
+.social-media-content ul li span {
+    font-size: 14px;
+    color: #454545;
+    display: block;
+    text-align: center;
+}

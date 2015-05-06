@@ -1,0 +1,23 @@
+/* main-content */
+.main-content {
+    width: 100%;
+    background: url(./images/bg.jpg) center -30px no-repeat;
+}
+
+.chief {
+    float: left;
+    display: inline;
+    width: 600px;
+}
+
+.extra {
+    float: right;
+    display: inline;
+    width: 380px;
+}
+
+.box {
+    margin: 20px 0;
+}
+
+/* main-content End */
