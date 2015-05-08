@@ -1,0 +1,24 @@
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="15%" class="t">排名</td>
+        <td width="20%" class="t">球队</td>
+        <td width="16%" class="t">胜</td>
+        <td width="16%" class="t">负</td>
+        <td width="16%" class="t">胜率</td>
+        <td width="17%" class="t">胜差</td>
+    </tr>
+    <% for(var i=0; i < _data.length; i++){%>
+    <tr>
+        <% if(i<8) { %>
+        <td><span><%= _data[i].serial %></span></td>
+        <% } else {%>
+        <td><%= _data[i].serial %></td>
+        <% } %>
+        <td><a href="#"><%= _data[i].name %></a></td>
+        <td><%= _data[i].wins %></td>
+        <td><%= _data[i].losses %></td>
+        <td><%= _data[i]['wining-percentage']+'%' %></td>
+        <td><%= _data[i]['games-back'] %></td>
+    </tr>
+    <% } %>
+</table>

@@ -1,6 +1,7 @@
 /* main-content */
 .main-content {
     width: 100%;
+    /*跳过 background-position 是 right/center/bottom 的图片*/
     background: url(./images/bg.jpg) center -30px no-repeat;
 }
 

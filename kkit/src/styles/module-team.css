@@ -11,9 +11,14 @@
 }
 
 #east-west-side .east-box {
-    width: 470px;
+    width: 468px;
     float: left;
     padding-left: 8px;
+}
+
+.NBA-module-title h2 a,.NBA-module-title h2 a:hover {
+    color: #ffffff;
+    font-size: 18px;
 }
 
 .east-box h2, .west-box h2 {

@@ -16,7 +16,7 @@
     height: 39px;
 }
 
-.NBA-module-title h2 a {
+.NBA-module-title h2 a,.NBA-module-title h2 a:hover {
     color: #ffffff;
     font-size: 18px;
 }

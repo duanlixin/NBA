@@ -1,0 +1,149 @@
+.examine-layout {
+    width: 380px;
+}
+
+.examine-layout h2 {
+    height: 39px;
+    line-height: 39px;
+    background: #1e518c;
+    border-bottom: 1px solid #be9d53;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 0 12px;
+}
+
+.examine-layout h2 a {
+    color: #fff;
+}
+
+#examine .examine {
+    box-shadow: 1px 2px 6px #e7e7e7;
+    -moz-box-shadow: 1px 2px 6px #e7e7e7;
+    -ms-box-shadow: 1px 2px 6px #e7e7e7;
+    -webkit-box-shadow: 1px 2px 6px #e7e7e7;
+    padding: 20px 10px 20px 10px;
+    border: 1px solid #e8e8e8;
+}
+
+#examine .examine .title {
+    font-size: 16px;
+}
+
+#examine .examine .title span {
+    display: inline-block;
+    width: 28px;
+    vertical-align: top;
+}
+
+#examine .examine .title em {
+    font-style: normal;
+    display: inline-block;
+    width: 320px;
+}
+
+#examine .examine-con {
+    overflow: hidden;
+    padding: 14px 0 4px 28px;
+}
+
+#examine .examine-con li {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#examine .examine-con li input {
+    margin: 3px 6px 0 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+#examine .btn-group {
+    padding-left: 28px;
+}
+
+#examine .btn-group a {
+    display: inline-block;
+    width: 148px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 1px 4px 6px #e7e7e7;
+}
+
+#examine .btn-group a.sub-btn {
+    border: 1px solid #4ac5ff;
+    background: url("../../styles/images/btn-bg.png") repeat-x left top;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#examine .btn-group a.look-btn {
+    border: 1px solid #c9c9c9;
+    background: url("../../styles/images/btn2-bg.png") repeat-x left top;
+    color: #545454;
+}
+
+#examine .btn-group a.sub-btn:hover {
+    background: url("../../styles/images/btn-hover-bg.png") repeat-x left top;
+}
+
+#examine .btn-group a.look-btn:hover {
+    background: url("../../styles/images/btn-hover2-bg.png") repeat-x left top;
+}
+
+/*查看样式*/
+
+.ex-option {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    min-width: 130px;
+    max-width: 140px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.pro-warp {
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    background: #9e9e9e;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.pro-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    z-index: 109;
+}
+
+.j-percent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 108;
+    height: 20px;
+    line-height: 20px;
+    background: #2a6cb6;
+    display: inline-block;
+}
+
+.ex-count {
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+
+#examine .btn-answer{
+    padding-left:100px;
+}

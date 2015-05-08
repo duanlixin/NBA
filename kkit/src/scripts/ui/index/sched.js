@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
     var $ = require('jquery');
+    var global = require('global');
 
     var Scroll = function (wrapperID) {
         var elWrapper = $('#' + wrapperID);
@@ -63,8 +64,6 @@ define(function (require, exports, module) {
                 self.index = index;
                 self.lock = false;
                 self._btnReset();
-
-                console.log('self.index->', self.index, '   self.childIndex->', self.childIndex);
             });
         },
         _next: function () {
@@ -122,43 +121,44 @@ define(function (require, exports, module) {
         },
         _load: function () {
             var self = this;
+            var width = this.width;
+            var height = this.elScrollWrapper.height();
+            self.elScroll.html(require('src/template/loading').render({width: width, height: height}));
 
-            // TODO:显示loading效果
-            // TODO: 等服务端数据结构出来之后将模板competitionSched假数据改成模板
             //$.ajax({
             //    type: 'GET',
-            //    url: '',
+            //    url: global.API.miniScoreBoard,
+            //    type: 'json',
             //    success: function(data) {
-            // 填充模板
+            var data = {};
+                    // TODO:返回数据结构有误的处理
+                    self.elScroll.html(require('src/template/competitionSched').render(data));
+                    self.elWrapper.find('a').attr('tabIndex', '-1');
 
-            var dataList = [];
-            self.elScroll.html(require('src/template/competitionSched').render(dataList));
-            self.elWrapper.find('a').attr('tabIndex', '-1');
+                    // 添加DOM引用
+                    self.elItems = self.elScroll.find('.daily');
+                    self.elItems.each(function (index, item) {
+                        var itemWidth = $(item).width();
+                        var itemPages = Math.ceil(itemWidth / self.width);
 
-            // 添加DOM引用
-            self.elItems = self.elScroll.find('.daily');
-            self.elItems.each(function (index, item) {
-                var itemWidth = $(item).width();
-                var itemPages = Math.ceil(itemWidth / self.width);
+                        self.scrollWidth += itemWidth;
+                        if (itemPages > 1) {
+                            self.itemPages[index] = itemPages;
+                        }
+                    });
+                    self.length = self.elItems.length;
 
-                self.scrollWidth += itemWidth;
-                if (itemPages > 1) {
-                    self.itemPages[index] = itemPages;
-                }
-            });
-            self.length = self.elItems.length;
-
-            // 检查填充的DOM宽度是否超出elScrollWrapper宽度
-            if (self.scrollWidth > self.width) {
-                self.elScroll.width(self.scrollWidth);
-                self.lock = false;
-                self._btnReset();
-                self._eventBind();
-            }
-            //    },
-            //    error: function(e) {
-            //        // 显示加载失败, 点击重试
-            //    }
+                    // 检查填充的DOM宽度是否超出elScrollWrapper宽度
+                    if (self.scrollWidth > self.width) {
+                        self.elScroll.width(self.scrollWidth);
+                        self.lock = false;
+                        self._btnReset();
+                        self._eventBind();
+                    }
+                //},
+                //error: function(e) {
+                //    // 显示加载失败, 点击重试
+                //}
             //});
         },
         _eventBind: function () {

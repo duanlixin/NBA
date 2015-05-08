@@ -1,0 +1,95 @@
+/* -------- mod ------- */
+#mod-chart {
+    width: 380px;
+    height: 714px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 3px #A6A6A6;
+}
+
+#mod-chart .title {
+    padding-left: 10px;
+    width: 370px;
+    height: 40px;
+    line-height: 40px;
+    color: #FFFFFF;
+    font-size: 18px;
+    background: #1E518C;
+}
+
+#mod-chart .title a {
+    color: #FFFFFF;
+}
+
+#mod-chart .tab {
+    width: 378px;
+    height: 38px;
+    border: 1px solid #7A7A7A;
+    border-top: 1px solid #BE9D53;
+    background: #57595B;
+}
+
+#mod-chart .tab li {
+    width: 188px;
+    height: 38px;
+    line-height: 38px;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+    border-right: 1px solid #7A7A7A;
+    cursor: pointer;
+    float: left;
+}
+
+#mod-chart .tab li.cur {
+    background: #454545;
+}
+
+#mod-chart .tab li.nb {
+    width: 189px;
+    border-right: 0px;
+}
+
+#mod-chart .wrap {
+    padding: 6px 0px 8px 0px;
+    width: 378px;
+    height: 619px;
+    border: 1px solid #E0E0E0;
+    border-top: 0px;
+}
+
+#mod-chart .wrap .mod {
+    width: 378px;
+    height: 619px;
+}
+
+#mod-chart .wrap .n {
+    display: none;
+}
+
+#mod-chart .wrap .mod table {
+    width: 100%;
+    height: 619px;
+    font-size: 14px;
+    text-align: center;
+    border: 0px;
+}
+
+#mod-chart .wrap .mod .t {
+    font-size: 18px;
+}
+
+#mod-chart .wrap .mod a {
+    color: #2A6CB6;
+    text-decoration: none;
+}
+
+#mod-chart .wrap .mod a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#mod-chart .wrap .mod span {
+    padding: 2px 8px 3px 8px;
+    color: #FFFFFF;
+    background: #2A6CB6;
+}

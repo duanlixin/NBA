@@ -26,6 +26,7 @@ define(function (require, exports, module) {
         this.timer;
         this.useAutoRun;
         this.player;
+        this.isPlayerHide;
 
         this._init();
     }
@@ -152,6 +153,7 @@ define(function (require, exports, module) {
                     video.setVid(vid);
                 }
 
+                self.isPlayerHide = false;
                 if (self.player === undefined) {
                     var playerAdHeight = 35;
                     var videoParam = {
@@ -163,7 +165,14 @@ define(function (require, exports, module) {
                         isVodFlashShowNextBtn: false, // 是否显示下一个视频
                         isOcxHideControl: false,    // 是否显示控件
                         isVodFlashShowSearchBar: false, //是否显示搜索框
-                        autoplay: true
+                        autoplay: true,
+                        onplay: function () {
+                            if (self.isPlayerHide === true) {
+                                self.player.getPlayer().mute();
+                            } else if (self.isPlayerHide === false) {
+                                self.player.getPlayer().unmute();
+                            }
+                        }
                     };
 
                     isLive && (videoParam.type = 1);
@@ -181,11 +190,9 @@ define(function (require, exports, module) {
             });
 
             this.elWrapper.on('click', '.btn-close', function (e) {
-                // TODO:此处如何停止广告或者静音
-                // TODO:加载中的视频如何暂停
-                //self.player = null;
-                //self.elPlayer.empty();
+                self.isPlayerHide = true;
                 self.player.pause();
+                self.player.getPlayer().mute();
                 self.elPlayer.css('z-index', '-1');
                 self.stop = false;
                 $(this).hide();

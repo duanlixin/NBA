@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="./m.css" role="debug"/>
+<% if(!showResult && !hasVoted){%>
+<form action="" method="post" id="exForm" name="exForm">
+    <p class="title"><span>&gt;&gt;</span><em><%= data.subject[0].title %></em></p>
+    <ul class="examine-con" id="ex-question">
+        <%for(var i=0,ii=data.subject[0].option.length; i< ii; i++){ %>
+        <li>
+            <label class="fl">
+                <% if(!hasVoted){ %>
+                <input type="radio" name="optionid" value="<%= data.subject[0].option[i].optionid %>" class="fl"/><%= data.subject[0].option[i].title %>
+                <% } else {%>
+                <input type="radio" name="optionid" disabled="disabled" value="<%= data.subject[0].option[i].option %>" class="fl"/><%= data.subject[0].option[i].title %>
+                <% } %>
+            </label>
+        </li>
+        <% } %>
+    </ul>
+    <p class="btn-group" id="btn-question">
+        <% if (!hasVoted) {%>
+        <a href="javascript:;" class="sub-btn icon" id="sub">提交</a>
+        <% } %>
+        <a href="javascript:;" class="look-btn icon" id="look" >查看</a>
+    </p>
+    <input type="hidden" name="subjectid" id="subjectid" value="<%= data.subject[0].subjectid %>">
+</form>
+<%}else{%>
+    <% if (hasVoted && showResult) {%>
+    <p class="title"><span>&gt;&gt;</span><em><%= data.subject[0].title %></em></p>
+    <% } %>
+    <ul class="examine-con examine-answer" id="ex-answer">
+        <%for(var i=0,ii=data.subject[0].option.length; i< ii; i++){ %>
+        <li>
+            <label class="fl ex-option"><%=data.subject[0].option[i].title%></label>
+            <p class="pro-warp fl">
+                <span class="pro-bar"><%=data.subject[0].option[i].percent%>%</span>
+                <span class="j-percent" style="width:<%=data.subject[0].option[i].percent%>%"></span>
+            </p>
+            <label class="ex-count"><%=data.subject[0].option[i].selected%> 票</label>
+        </li>
+        <% } %>
+    </ul>
+    <p class="btn-group btn-answer" id="btn-answer">
+        <a href="javascript:;" class="look-btn icon" id="back">返回</a>
+    </p>
+<%}%>

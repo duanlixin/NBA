@@ -33,7 +33,7 @@
     display: block;
     height: 100%;
     width: 100%;
-    background: url(./images/logo_nba.png) no-repeat;
+    background: url(./images/logo_nba.png) 0 0 no-repeat;
     text-indent: -9999em;
 }
 
@@ -86,26 +86,10 @@
     color: #fff;
 }
 
-.top-nav a,
-.top-nav span {
-    vertical-align: middle;
-}
-
-.top-nav a {
-    color: #fff;
-    display: inline-block;
-    height: 21px;
-    text-indent: 37px;
-    background: url(./images/logo_bbs.png) no-repeat;
-}
-
-.top-nav a:hover {
+.top-nav .login{
     color: #fff;
 }
 
-.top-nav span {
-    color: #bdc3cd;
-}
 
 /* 顶部链接结束 */
 
@@ -116,10 +100,13 @@
     right: 0;
     width: 140px;
     height: 33px;
-    background-color: green;
     clear: both;
-    background: #ffffff url(./images/logo_shop.png) 4px no-repeat;
+    cursor: pointer;
+    background: #ffffff url(./images/logo_shop.png?#unsprite) no-repeat;
     box-shadow: 0px 1px 1px #000000;
+    -webkit-box-shadow: 0px 1px 1px #000000;
+    -moz-box-shadow: 0px 1px 1px #000000;
+    -ms-box-shadow: 0px 1px 1px #000000;
 }
 
 .dropdown-list-btn ul {
@@ -157,11 +144,11 @@
     height: 10px;
     top: 12px;
     right: 2px;
-    background: #ffffff url(./images/triangle_down.png) no-repeat;
+    background: #ffffff url(./images/triangle_down.png) 0 0 no-repeat;
 }
 
 .dropdown-list-btn .dropup-arrow {
-    background: #ffffff url(./images/triangle_up.png) no-repeat;
+    background: #ffffff url(./images/triangle_up.png) 0 0 no-repeat;
 }
 
 /* NBA商店结束 */
@@ -272,95 +259,98 @@
     font-size: 14px;
 }
 
-.team-list td a.celtics {
-    background: url(./images/teamlogo50x60/celtics.png) 12px 12px no-repeat;
+.team-list td a {
+    background: url(./images/teamlogo-small.png) no-repeat;
 }
-.team-list td a.nets {
-    background: url(./images/teamlogo50x60/nets.png) 12px 12px no-repeat;
+.team-list td a.small-celtics {
+    background-position: 0 -6px;
 }
-.team-list td a.knicks {
-    background: url(./images/teamlogo50x60/knicks.png) 12px 12px no-repeat;
+.team-list td a.small-nets {
+    background-position: 0 -60px;
 }
-.team-list td a.s76ers {
-    background: url(./images/teamlogo50x60/76ers.png) 12px 12px no-repeat;
+.team-list td a.small-knicks {
+    background-position: 0 -116px;
 }
-.team-list td a.raptors {
-    background: url(./images/teamlogo50x60/raptors.png) 12px 12px no-repeat;
+.team-list td a.small-s76ers {
+    background-position: 0 -172px;
 }
-.team-list td a.bulls {
-    background: url(./images/teamlogo50x60/bulls.png) 12px 12px no-repeat;
+.team-list td a.small-raptors {
+    background-position: 0 -228px;
 }
-.team-list td a.cavaliers {
-    background: url(./images/teamlogo50x60/cavaliers.png) 12px 12px no-repeat;
+.team-list td a.small-bulls {
+    background-position: 0 -284px;
 }
-.team-list td a.pistons {
-    background: url(./images/teamlogo50x60/pistons.png) 12px 12px no-repeat;
+.team-list td a.small-cavaliers {
+    background-position: 0 -338px;
 }
-.team-list td a.pacers {
-    background: url(./images/teamlogo50x60/pacers.png) 12px 12px no-repeat;
+.team-list td a.small-pistons {
+    background-position: 0 -392px;
 }
-.team-list td a.bucks {
-    background: url(./images/teamlogo50x60/bucks.png) 12px 12px no-repeat;
+.team-list td a.small-pacers {
+    background-position: 0 -448px;
 }
-.team-list td a.hawks {
-    background: url(./images/teamlogo50x60/hawks.png) 12px 12px no-repeat;
+.team-list td a.small-bucks {
+    background-position: 0 -500px;
 }
-.team-list td a.hornets {
-    background: url(./images/teamlogo50x60/hornets.png) 12px 12px no-repeat;
+.team-list td a.small-hawks {
+    background-position: 0 -558px;
 }
-.team-list td a.heat {
-    background: url(./images/teamlogo50x60/heat.png) 12px 12px no-repeat;
+.team-list td a.small-hornets {
+    background-position: 0 -612px;
 }
-.team-list td a.magic {
-    background: url(./images/teamlogo50x60/magic.png) 12px 12px no-repeat;
+.team-list td a.small-heat {
+    background-position: 0 -668px;
 }
-.team-list td a.wizards {
-    background: url(./images/teamlogo50x60/wizards.png) 12px 12px no-repeat;
+.team-list td a.small-magic {
+    background-position: 0 -722px;
 }
-.team-list td a.nuggets {
-    background: url(./images/teamlogo50x60/nuggets.png) 12px 12px no-repeat;
+.team-list td a.small-wizards {
+    background-position: 0 -778px;
 }
-.team-list td a.timber_wolves {
-    background: url(./images/teamlogo50x60/timber_wolves.png) 12px 12px no-repeat;
+.team-list td a.small-nuggets {
+    background-position: 0 -840px;
 }
-.team-list td a.thunder {
-    background: url(./images/teamlogo50x60/thunder.png) 12px 12px no-repeat;
+.team-list td a.small-timber_wolves {
+    background-position: 0 -890px;
 }
-.team-list td a.trail_blazers {
-    background: url(./images/teamlogo50x60/trail_blazers.png) 12px 12px no-repeat;
+.team-list td a.small-thunder {
+    background-position: 0 -940px;
 }
-.team-list td a.jazz {
-    background: url(./images/teamlogo50x60/jazz.png) 12px 12px no-repeat;
+.team-list td a.small-trail_blazers {
+    background-position: 0 -996px;
 }
-.team-list td a.warriors {
-    background: url(./images/teamlogo50x60/warriors.png) 12px 12px no-repeat;
+.team-list td a.small-jazz {
+    background-position: 0 -1052px;
 }
-.team-list td a.clippers {
-    background: url(./images/teamlogo50x60/clippers.png) 12px 12px no-repeat;
+.team-list td a.small-warriors {
+    background-position: 0 -1106px;
 }
-.team-list td a.lakers {
-    background: url(./images/teamlogo50x60/lakers.png) 12px 12px no-repeat;
+.team-list td a.small-clippers {
+    background-position: 0 -1162px;
 }
-.team-list td a.suns {
-    background: url(./images/teamlogo50x60/suns.png) 12px 12px no-repeat;
+.team-list td a.small-lakers {
+    background-position: 0 -1218px;
 }
-.team-list td a.kings {
-    background: url(./images/teamlogo50x60/kings.png) 12px 12px no-repeat;
+.team-list td a.small-suns {
+    background-position: 0 -1274px;
 }
-.team-list td a.mavericks {
-    background: url(./images/teamlogo50x60/mavericks.png) 12px 12px no-repeat;
+.team-list td a.small-kings {
+    background-position: 0 -1328px;
 }
-.team-list td a.rockets {
-    background: url(./images/teamlogo50x60/rockets.png) 12px 12px no-repeat;
+.team-list td a.small-mavericks {
+    background-position: 0 -1386px;
 }
-.team-list td a.grizzlies {
-    background: url(./images/teamlogo50x60/grizzlies.png) 12px 12px no-repeat;
+.team-list td a.small-rockets {
+    background-position: 0 -1436px;
 }
-.team-list td a.pelicans {
-    background: url(./images/teamlogo50x60/pelicans.png) 12px 12px no-repeat;
+.team-list td a.small-grizzlies {
+    background-position: 0 -1492px;
 }
-.team-list td a.spurs {
-    background: url(./images/teamlogo50x60/spurs.png) 12px 12px no-repeat;
+.team-list td a.small-pelicans {
+    background-position: 0 -1548px;
+}
+.team-list td a.small-spurs {
+    background-position: 0 -1602px;
 }
 /* 导航菜单 */
 

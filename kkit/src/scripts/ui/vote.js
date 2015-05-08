@@ -1,7 +1,17 @@
 define(function (require, exports, module) {
-    // 接口域名：http://panshi.qq.com
-    // 投票ID：单选10282406 多选10283226
+    /*---------------------------------------
+     备注：
+     接口域名：http://panshi.qq.com
+     投票ID：单选10282406 多选10283226
+     接口BUG：
+            1、即使没有登录态login也要传值且不要等于0，写死login = 1
+            2、source参数也要写死为1
+            3、需要传入g_tk参数
+
+     ----------------------------------------*/
+
     var $ = require('jquery');
+    var utils = require('utils/utils');
     var URL = "http://panshi.qq.com";
     var voteId = {
         SIGLE: 10282406,    // NBA官网单选id
@@ -62,11 +72,14 @@ define(function (require, exports, module) {
          */
         getVote: function (fn) {
             var self = this;
-            var opts = {source: ''};
+            var opts = {
+                g_tk: utils.generateToken(utils.getUkey()),
+                source: '1'
+            };
 
-            for (var key in this.login) {
-                opts[key] = this.login[key];
-            }
+            //for (var key in this.login) {
+            //    opts[key] = this.login[key];
+            //}
 
             $.ajax({
                 type: 'GET',
@@ -92,27 +105,29 @@ define(function (require, exports, module) {
          */
         postVote: function (answer, rank, score, second, panshiId, fn) {
             var self = this;
-            var opts = {source: ''};
-            opts.login = this.login.loginType;
+            var opts = {
+                g_tk: utils.generateToken(utils.getUkey()),
+                source: '1'
+            };
             opts.answer = answer;
             opts.rank = rank;
             opts.score = score;
             opts.second = second;
             opts.panshiId = panshiId;
+            opts.login = 1;
 
-            // TODO:修改为iframe + form 提交
-            $.ajax({
-                type: 'POST',
+            var poster = new utils.PostIframe({
                 url: URL + '/v2/vote/' + this.voteId + '/submit',
-                data: opts,
-                dataType: 'jsonp',
-                success: function (data) {
-                    typeof fn === 'function' && fn(data, self, loginType);
+                formData: opts,
+                success: function () {
+                    typeof fn === 'function' && fn({}, self, loginType);
                 },
                 error: function () {
                     typeof fn === 'function' && fn(null, self, loginType);
                 }
             });
+
+            poster.submit();
         },
         /**
          * 获取投票结果
@@ -120,7 +135,13 @@ define(function (require, exports, module) {
          */
         getResult: function (fn) {
             var self = this;
-            var opts = {source: ''};
+            var opts = {
+                g_tk: utils.generateToken(utils.getUkey()),
+                source: '1'
+            };
+
+            // hack
+            opts.login = 1;
 
             $.ajax({
                 type: 'GET',

@@ -13,7 +13,7 @@
     padding: 0 12px;
 }
 
-.author-layout h2 a {
+#author h2 a, #author h2 a:hover{
     color: #fff;
 }
 
@@ -25,6 +25,7 @@
     -webkit-box-shadow: 1px 2px 6px #e7e7e7;
     padding: 20px 20px 20px 10px;
     border: 1px solid #e8e8e8;
+    font-size: 14px;
 }
 
 #author .author-con {

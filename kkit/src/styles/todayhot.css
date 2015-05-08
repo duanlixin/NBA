@@ -14,7 +14,7 @@
             padding: 0 12px;
         }
 
-        .hot-layout h2 a {
+        #hot h2 a,#hot h2 a:hover {
             color: #fff;
         }
 

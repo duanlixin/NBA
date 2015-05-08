@@ -12,7 +12,7 @@
          *  base路径映射到的目标文件夹必须是kConfig的直接上级文件夹，
          *  即项目根目录，否则合并会出错
          */
-        "base": "http://sports.qq.com",
+        "base": "http://nbachina.qq.com/",
         "alias": {
             "jquery": "lib/jquery",
             "jsonselect": "lib/jsonselect",
@@ -22,8 +22,7 @@
         "paths": {
             "utils": "src/scripts/utils",
             "ui": "src/scripts/ui",
-            "template": "src/template",
-            "utils": "src/scripts/utils"
+            "template": "src/template"
         },
         "debug": true,
         /* --------end-----------*/

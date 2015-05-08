@@ -5,7 +5,7 @@ define(function (require, exports, module) {
         curClass: '',
         curDefaultIndex: 0,
         switchEventName: 'mouseenter'
-    }
+    };
 
     //TODO:tab跟tabview可以添加自动识别兄弟节点模式，减少class
 
@@ -32,21 +32,44 @@ define(function (require, exports, module) {
         this.elViews;
 
         this._init();
-    }
+    };
 
     Tab.prototype = {
         _init: function () {
-            this.elTabs = $('.' + this.tabClass);
-            this.elViews = this.viewClass && $('.' + this.viewClass);
+            this._getElTabs();
+            this._getElViews();
             this._switchTab(this.curDefaultIndex);
             this._eventBind();
         },
+        _getElTabs: function () {
+            //if (this.elTabs === undefined ||
+            //    (this.elTabs && this.elTabs.length === 0)) {
+                return this.elTabs = $('.' + this.tabClass);
+            //}
+            //
+            //return this.elTabs;
+        },
+        _getElViews: function () {
+            //if (this.viewClass === undefined) {
+            //    return null;
+            //}
+            //
+            //if (this.elViews === undefined ||
+            //    (this.elViews && this.elViews.length === 0)) {
+                return this.elViews = $('.' + this.viewClass);
+            //}
+            //
+            //return this.elViews;
+        },
         _switchTab: function (index) {
-            this.elTabs.removeClass(this.curClass);
-            this.elTabs.eq(index).addClass(this.curClass);
-            if (this.elViews) {
-                this.elViews.hide();
-                this.elViews.eq(index).show();
+            var elTabs = this._getElTabs();
+            var elViews = this._getElViews();
+
+            elTabs.removeClass(this.curClass);
+            elTabs.eq(index).addClass(this.curClass);
+            if (elViews) {
+                elViews.hide();
+                elViews.eq(index).show();
             }
         },
         _eventBind: function () {
@@ -62,7 +85,7 @@ define(function (require, exports, module) {
                 }
             });
         }
-    }
+    };
 
     module.exports = {
         init: function(opts) {
@@ -76,5 +99,5 @@ define(function (require, exports, module) {
                 }
             }
         }
-    }
+    };
 });

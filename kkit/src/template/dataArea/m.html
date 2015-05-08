@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="./xxx.css" role="debug"/>
+
+<div class="title"><a href="#">数据专区</a></div>
+<div class="tab">
+    <li class="tab-data cur">得分</li>
+    <li class="tab-data">篮板</li>
+    <li class="tab-data">助攻</li>
+    <li class="tab-data">盖帽</li>
+    <li class="tab-data nb">抢断</li>
+</div>
+<div class="wrap">
+    <% for(var i = 0, len = _data.length; i < len; i++){ %>
+        <div class="mod tabview-data <%= i == 0 ? '' : 'n' %>">
+            <%== ./dataMod(_data[i]) %>
+        </div>
+    <% } %>
+</div>

@@ -1,6 +1,8 @@
 define(function (require, exports) {
-    var $ = require('jquery');
+    require('jquery');
+    require('global');
     require('lib/es5-shim');
+    require('lib/jquery.cookie');
 
     $(function () {
         require('ui/header');
@@ -38,8 +40,5 @@ define(function (require, exports) {
             tabClass: 'tab-trank',
             viewClass: 'tabview-trank'
         });
-
-        // 首页投票
-        require('ui/index/index');
     });
 });

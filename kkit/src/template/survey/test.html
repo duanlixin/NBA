@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="examine" class="box examine-layout">
+    <h2><a href="javascript:;">调查</a></h2>
+    <div class="examine" id="ex-bd">
+    </div>
+</div>
+</body>
+</html>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var html="";
+                html+='<iframe id="exIfr" name="exIfr" style="display:none"></iframe>' +
+                        '<form action="" method="post" id="exForm" name="exForm" target="exIfr">';
+
+                $.ajax({
+                    // api:http://panshi.qq.com/v2/vote/10283226?source&desc
+                    // url:URL+'/v2/vote/group/<groupid>?source&[desc]',
+                    type:'get',
+                    url: 'http://panshi.qq.com/v2/vote/10283226?source&desc',
+                    dataType: 'jsonp',
+                    success:function(data){
+                        if(data){
+                            html+='<p class="title"><span>&gt;&gt;</span><em>data.subject[0].title</em></p>' ;
+                            html +='<ul class="examine-con">' ;
+                            for(var i=0,ii=data.subject[0].option.length; i< ii; i++){
+                                html+='<li>' +
+                                        '<label class="fl">' +
+                                            ' <input type="checkbox" name="optionid[]" value="+ data.subject[0].option[i].optionid +" class="fl"/>data.subject[0].option[i].title' +
+                                        ' </label>' +
+                                        ' </li>';
+                                html+='</ul>';
+                                html+='<p class="btn-group">' +
+                                          '<a href="javascript:;" class="sub-btn icon" id="sub">提交</a>' +
+                                          '<a href="javascript:;" class="look-btn icon" id="look" >查看</a>' +
+                                      '</p>';
+                                html+='<input type="hidden" name="subjectid" id="subjectid" value="<%= data.subject[0].subjectid %>">';
+                                html+='</form>';
+                            }
+                        }
+                        $(".examine").html(html);
+                    }
+                });
+            })
+        </script>
