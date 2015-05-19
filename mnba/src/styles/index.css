@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Oswald";
+    src: url('../fonts/Oswald.eot');
+    src: url("../fonts/Oswald.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald.woff") format("woff"), url("../fonts/Oswald.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}

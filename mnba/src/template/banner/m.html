@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="./m.css">
+<div  id="banner">
+    <div class="slider-banner" id="wrap-list">
+        <div class="slider-content">
+            <div class="slider-img">
+                <img src="images/banner-01.png">
+                <i></i>
+            </div>
+            <p>小牛vs火箭Ⅱ前瞻：哈登不缺帮手 伤病突袭小牛</p>
+            <span>10分钟前</span>
+        </div>
+        <div class="slider-content">
+            <div class="slider-img">
+                <img src="images/banner-02.jpg">
+                <i></i>
+            </div>
+            <p>小牛vs火箭Ⅱ前瞻：哈登不缺帮手 伤病突袭小牛</p>
+            <span>10分钟前</span>
+        </div>
+        <div class="slider-content">
+            <div class="slider-img">
+                <img src="images/banner-03.jpg">
+                <i></i>
+            </div>
+            <p>小牛vs火箭Ⅱ前瞻：哈登不缺帮手 伤病突袭小牛</p>
+            <span>10分钟前</span>
+        </div>
+        <div class="slider-content">
+            <div class="slider-img">
+                <img src="images/banner-04.jpg">
+                <i></i>
+            </div>
+            <p>小牛vs火箭Ⅱ前瞻：哈登不缺帮手 伤病突袭小牛</p>
+            <span>10分钟前</span>
+        </div>
+        <div class="slider-content">
+            <div class="slider-img">
+                <img src="images/banner-05.jpg">
+                <i></i>
+            </div>
+            <p>小牛vs火箭Ⅱ前瞻：哈登不缺帮手 伤病突袭小牛</p>
+            <span>10分钟前</span>
+        </div>
+    </div>
+    <div class="slider-item">
+        <p>
+            <span class="slider-current"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </p>
+    </div>
+</div>
+<script type="text/javascript" src="js/iSlider.js"></script>
+<script>
+    var mySlider=new iSlider({
+        wrap:'#wrap-list',
+        item:'.slider-content',
+        isVertical:false,
+        speed:300,
+        fullScr:false,
+        preventMove:true,
+        onslide:function (index) {
+            document.querySelector('.slider-item .slider-current').className='';
+            document.querySelectorAll('.slider-item span')[index].className='slider-current';
+        }
+    })
+</script>

@@ -1,0 +1,225 @@
+#mod-data {
+    width: 100%;
+}
+.mod-data-title {
+    width: 100%;
+    height: 40px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #BE9D53;
+    background: #1E518C;
+}
+.mod-data-title .text {
+    margin-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    float: left;
+}
+.mod-data-title .season {
+    margin: 5px 10px 0px 0px;
+    padding: 3px;
+    width: 94px;
+    height: 24px;
+    background: #1A477B;
+    float: right;
+}
+.mod-data-title .season span {
+    width: 47px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+}
+.mod-data-title .season span.cur {
+    background: #2A6CB6;
+}
+.mod-data-wrap {
+    width: 100%;
+    display: none;
+}
+.mod-data-wrap.cur {
+    display: block;
+}
+.mod-data-tab {
+    width: 100%;
+    height: 35px;
+    border-left: 1px solid #7A7A7A;
+    box-sizing: border-box;
+    background: #57595B;
+}
+.mod-data-tab.m {
+    height: 70px;
+}
+.mod-data-tab span {
+    width: 20%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-right: 1px solid #7A7A7A;
+    border-bottom: 1px solid #7A7A7A;
+    box-sizing: border-box;
+    float: left;
+}
+.mod-data-tab.m span {
+    width: 25%;
+}
+.mod-data-tab span.cur {
+    background: #454545;
+}
+.mod-data-rank {
+    width: 100%;
+    display: none;
+}
+.mod-data-rank.cur {
+    display: block;
+}
+.mod-data-rank .first {
+    position: relative;
+    width: 100%;
+    height: 155px;
+}
+.mod-data-rank .first .img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 98px;
+    height: 155px;
+}
+.mod-data-rank .first .img img {
+    width: 98px;
+    height: 155px;
+}
+.mod-data-rank .first .info {
+    margin-left: 40%;
+    padding-top: 40px;
+    width: 150px;
+    height: 115px;
+    color: #454545;
+}
+.mod-data-rank .first .info .rank {
+    width: 40px;
+    height: 115px;
+    line-height: 75px;
+    font-family: Oswald,sans-serif;
+    font-size: 80px;
+    float: left;
+}
+.mod-data-rank .first .info .player {
+    width: 110px;
+    font-size: 16px;
+    float: left;
+}
+.mod-data-rank .first .info .duty {
+    padding-top: 5px;
+    width: 110px;
+    font-size: 12px;
+    color: #57595B;
+    float: left;
+}
+.mod-data-rank .first .info .num {
+    padding-top: 10px;
+    width: 110px;
+    font-family: Oswald,sans-serif;
+    font-size: 22px;
+    float: left;
+}
+.mod-data-rank .first .team {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+}
+.mod-data-rank .first .team img {
+    width: 40px;
+    height: 40px;
+}
+.mod-data-rank .headline {
+    width: 100%;
+    height: 22px;
+    color: #FFFFFF;
+    font-size: 14px;
+    background: #9E9E9E;
+}
+.mod-data-rank .headline .rank {
+    width: 20%;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    float: left;
+}
+.mod-data-rank .headline .player {
+    padding-left: 15px;
+    width: 80%;
+    height: 22px;
+    line-height: 22px;
+    box-sizing: border-box;
+    float: left;
+}
+.mod-data-rank ul {
+    width: 100%;
+    border-bottom: 1px solid #BE9D53;
+}
+.mod-data-rank ul li {
+    width: 100%;
+    height: 50px;
+    list-style: none;
+}
+.mod-data-rank ul li .rank {
+    width: 20%;
+    height: 50px;
+    line-height: 50px;
+    font-family: Oswald,sans-serif;
+    color: #7A7A7A;
+    font-size: 20px;
+    text-align: center;
+    background: #F6F6F6;
+    float: left;
+}
+.mod-data-rank ul li .img {
+    padding: 8px 15px 0px 15px;
+    width: 30px;
+    height: 42px;
+    float: left;
+}
+.mod-data-rank ul li .img img {
+    width: 34px;
+    height: 34px;
+}
+.mod-data-rank ul li .player {
+    padding-top: 8px;
+    font-size: 14px;
+    height: 42px;
+    color: #454545;
+    float: left;
+}
+.mod-data-rank ul li .player a {
+    display: block;
+    margin-bottom: 3px;
+    color: #2A6CB6;
+    text-decoration: none;
+}
+.mod-data-rank ul li .num {
+    margin-right: 15px;
+    height: 50px;
+    line-height: 50px;
+    font-family: Oswald,sans-serif;
+    color: #454545;
+    font-size: 22px;
+    float: right;
+}
+.mod-data-more {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #EAEAEA;
+}
+.mod-data-more a {
+    font-size: 12px;
+    color: #2A6CB6;
+    text-decoration: none;
+}

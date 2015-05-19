@@ -1,0 +1,77 @@
+body,ul,li,dl,dt,dd,p,img,h1,h2,h3,h4,h5,h6{padding: 0;margin:0;
+    font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal;  line-height: normal; font-family: 微软雅黑, 宋体, Helvetica, Arial, sans-serif;
+}
+#banner{
+    width: 100%;
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.slider-banner{
+    height: 205px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 1px 8px #ebebeb;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+}
+.slider-content{
+    width: 100%;
+    float: left;
+}
+.slider-content .slider-img{
+    position: relative;
+    overflow: hidden;
+}
+.slider-content .slider-img img{
+    width: 100%;
+    /*height: auto;*/
+    max-height: 140px;
+}
+.slider-content .slider-img i{
+    display: block;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    background: url("images/video-btn.png") no-repeat;
+    background-size: 23px 23px;
+    bottom: 10px;
+    left: 10px;
+}
+.slider-content p{
+    color: #454545;
+    font-size: 14px;
+    padding: 6px 0 4px 8px;
+}
+.slider-content span{
+    color: #9e9e9e;
+    font-size: 12px;
+    padding-left:8px;
+}
+.slider-item{
+    position: relative;
+    overflow: hidden;
+}
+.slider-item p{
+    margin-left:40%;
+}
+.slider-item p span{
+    display: block;
+    float: left;
+    margin: 8px 5px 8px 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    border:2px solid #2a6cb6;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.slider-item p span.slider-current{
+    background: #2a6cb6;
+}
+
+@media (max-width: 320px) {
+    .slider-content p{
+        font-size: 12px;
+    }
+}

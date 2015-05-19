@@ -1,0 +1,159 @@
+body,ul,li,dl,dt,dd,p,img,h1,h2,h3,h4,h5,h6{padding: 0;margin:0;
+    font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal;  line-height: normal; font-family: 微软雅黑, 宋体, Helvetica, Arial, sans-serif;
+}
+#schedule .schedule-head{
+    position: relative;
+    width:100%;
+    height: 36px;
+    background: #dadada;
+    text-align: center;
+    color: #454545;
+    font-size: 15px;
+}
+#schedule .schedule-head .schedule-title p{
+    display: none;
+    height: 36px;
+    line-height: 36px;
+}
+#schedule .schedule-head p.titleCurrent,#schedule .teamCurrent{
+    display: block;
+}
+
+#schedule .schedule-head .left-btn{
+    display: block;
+    background:#2a6cb6;
+    height: 36px;
+    width:30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#schedule .schedule-head .left-btn i{
+    background:url("images/icon_left.png") no-repeat 7px 10px;
+    background-size: 10px 15px;
+    display: inline-block;
+    height: 36px;
+    width:30px;
+}
+
+#schedule .schedule-head .right-btn{
+    display: block;
+    background:#2a6cb6;
+    height: 36px;
+    width:30px;
+    position: absolute;
+    right:0;
+    top: 0;
+}
+#schedule .schedule-head .right-btn i{
+    background:url("images/icon_right.png") no-repeat 10px 10px;
+    background-size: 10px 15px;
+    display: inline-block;
+    height: 36px;
+    width:30px;
+}
+.schedule-content{
+    display: none;
+}
+.schedule-content ul{
+    background: #f6f6f6;
+    width: 100%;
+    padding: 0 10px 10px 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+}
+.schedule-content ul li{
+    list-style: none;
+    height: 105px;
+    width: 49%;
+    margin-top: 10px;
+    background: #ffffff;
+}
+.schedule-content li:nth-child(2n+1){
+    float: left;
+}
+.schedule-content li:nth-child(2n){
+    float: right;
+}
+.schedule-content li .game-head{
+    height: 38px;
+    border-bottom: 1px solid #be9d53;
+}
+.schedule-content li .game-head p{
+    background: #a90b33;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #f6f6f6;
+    padding-left: 10px;
+}
+.schedule-content li .game-head span{
+    display: block;
+    font-size: 12px;
+    color: #454545;
+    padding-left: 10px;
+}
+.schedule-content li .game-content{
+    background:url("images/minigame-spacer.gif") no-repeat 70% 10px;
+}
+.schedule-content li .game-content p{
+    padding-top: 8px;
+    padding-left: 10px;
+    overflow:hidden;
+}
+.schedule-content li .game-content p img{
+    width: 34px;
+    height: auto;
+    float: left;
+}
+.schedule-content li .game-content p span{
+    color: #454545;
+    font-size: 12px;
+    display: block;
+    float: left;
+    padding: 4px 0 0 6px;
+}
+.schedule-content li .game-content p em{
+    float: right;
+    padding-right: 10px;
+    width: 16%;
+    text-align: right;
+    font-size: 14px;
+    color: #454545;
+    font-weight: bold;
+}
+.schedule-content li.end{
+    background: #eaeaea;
+}
+.schedule-content li.end .game-head p{
+    background: #9e9e9e;
+}
+.schedule-content li.end .game-content em.game-win{
+    color: #a90b33;
+}
+.schedule-content li.live .game-content{
+    overflow: hidden;
+    background: none;
+}
+.schedule-content li.live .game-content p.item-team{
+    width: 40%;
+    float: left;
+    padding-left: 12%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-top:12px;
+}
+.schedule-content li.live .game-content p.item-team span{
+    padding-top: 8px;
+    clear: both;
+}
+.schedule-content li.live .game-content strong{
+    float: left;
+    width: 20%;
+    color: #a90b33;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 30px;
+}
+

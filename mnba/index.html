@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NBA中国官方网站</title>
+    <meta name="description" content="NBA中国官方网站">
+    <meta name="keywords" content="NBA中国,全明星赛,NBA视频直播,NBA赛程,NBA转播表,火箭,热火,湖人,马刺,快船,雷霆,篮网,美职篮,篮球,大卫斯特恩,乔丹,科比,林书豪,">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,address=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <link rel="stylesheet" href="./src/styles/normalize.css" role="debug"/>
+    <link rel="stylesheet" href="./src/styles/base.css" role="debug"/>
+    <link rel="stylesheet" href="./src/styles/index.css" role="debug"/>
+</head>
+<body>
+<section id="content">
+    <div id="schedule"></div>
+    <div id="album"></div>
+    <div id="dataArea"></div>
+    <div id="news"></div>
+</section>
+<script charset="utf-8" src="./lib/sea-debug.js" role="debug"></script>
+<script charset="utf-8" type="text/javascript" role="debug">
+    seajs.use('./kConfig/configs', function (conf) {
+        seajs.config(conf);
+        seajs.use('./src/scripts/index');
+    });
+</script>
+</body>
+</html>
